@@ -1,5 +1,5 @@
 export const environment = {
-  defaultUnprotectedRoute: '/',
+  defaultUnprotectedRoute: '/login',
   defaultProtectedRoute: '/main',
   enablePWA: false,
   zustandStoreVersion: 1,
@@ -10,6 +10,7 @@ export const environment = {
     },
     user: {
       me: '/users/me',
+      create: '/users',
     },
   },
 };

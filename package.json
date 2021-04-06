@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "cross-env PORT=4200 craco start",
-    "start:dev": "cross-env PORT=4200 REACT_APP_BASE_URL=http://localhost:3000 craco start",
-    "build": "craco build",
+    "start": "cross-env PORT=4200 REACT_APP_BASE_URL=http://localhost:3000 craco start",
+    "start:prod": "cross-env PORT=4200 REACT_APP_BASE_URL=http://localhost:3000 craco start",
+    "build": "cross-env REACT_APP_BASE_URL=http://localhost:3000 craco build",
+    "build:prod": "cross-env REACT_APP_BASE_URL=http://localhost:3000 craco build",
     "eject": "react-scripts eject",
     "test": "jest",
     "format": "prettier --write --config .prettierrc.yaml .",
@@ -15,7 +16,7 @@
     "lint:test": "eslint . --cache --ext js,jsx,ts,tsx",
     "storybook": "cross-env REACT_APP_ENVIRONMENT=mock start-storybook -s ./public -p 6006 --docs",
     "storybook:build": "cross-env REACT_APP_ENVIRONMENT=mock build-storybook -s ./public --docs",
-    "deploy:aws": "cross-env REACT_APP_BUILD_COMMAND=build AWS_PROFILE= AWS_BUCKET_NAME= AWS_CLOUDFRONT_ID= node aws-deploy.js"
+    "deploy:aws": "cross-env REACT_APP_BUILD_COMMAND=build:prod AWS_PROFILE=aws_h4ad AWS_BUCKET_NAME=horus.viniciusl.com.br AWS_CLOUDFRONT_ID=E972B0FX4I6KB node aws-deploy.js"
   },
   "dependencies": {
     "@emotion/react": "^11.1.4",

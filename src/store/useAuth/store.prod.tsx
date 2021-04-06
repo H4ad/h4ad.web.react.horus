@@ -5,7 +5,7 @@ import { environment } from '../../environments/environment';
 import { getStoreName } from '../utils/functions';
 import useAuthStore from './index';
 import { UseAuthStore } from './models';
-import { getInfoAboutCurrentUserFromAPI, getTokenProxyFromAPI, resetState } from './services';
+import { createUserFromAPI, getInfoAboutCurrentUserFromAPI, getTokenProxyFromAPI, resetState } from './services';
 import { getCancelToken } from '../../utils/axios';
 import { createErrorNotification } from '../../services/notification';
 
@@ -15,6 +15,7 @@ export function createAuthStore(): UseStore<UseAuthStore> {
     jwt: null,
     user: null,
     getTokenProxyFromAPI: getTokenProxyFromAPI(set),
+    createUserFromAPI: createUserFromAPI(set),
     getInfoAboutCurrentUserFromAPI: getInfoAboutCurrentUserFromAPI(set),
     resetState: resetState(set),
   }), {

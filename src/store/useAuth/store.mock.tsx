@@ -25,6 +25,7 @@ export function createAuthStore(): UseStore<UseAuthStore> {
     user,
     getTokenProxyFromAPI: () => Promise.resolve(),
     getInfoAboutCurrentUserFromAPI: () => Promise.resolve(),
+    createUserFromAPI: () => Promise.resolve(user),
     resetState: () => Promise.resolve(),
   }), getStoreName('useAuthStore')));
 }
