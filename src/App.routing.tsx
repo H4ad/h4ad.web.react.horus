@@ -1,5 +1,6 @@
 import React, { ReactElement, Suspense } from 'react';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import LockPageManager from './components/LockPageManager';
 
 import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
@@ -15,29 +16,33 @@ function AppRouting(): ReactElement | null {
 
   return (
     <Suspense fallback={<p>Carregando...</p>}>
-      <BrowserRouter>
-        <Switch>
-          <PublicRoute exact path="/">
-            <Redirect to="/login"/>
-          </PublicRoute>
+      <LockPageManager />
 
-          <PublicRoute path="/login">
-            <LoginPage/>
-          </PublicRoute>
+      <Switch>
+        <PublicRoute exact path="/">
+          <Redirect to="/login"/>
+        </PublicRoute>
 
-          <PublicRoute path="/register">
-            <RegisterPage/>
-          </PublicRoute>
+        <PublicRoute path="/login">
+          <LoginPage/>
+        </PublicRoute>
 
-          <PrivateRoute path="/main">
-            <MainPage/>
-          </PrivateRoute>
+        <PublicRoute path="/register">
+          <RegisterPage/>
+        </PublicRoute>
 
-          <Route default>
-            <Redirect to="/login"/>
-          </Route>
-        </Switch>
-      </BrowserRouter>
+        <PrivateRoute path="/main">
+          <MainPage/>
+        </PrivateRoute>
+
+        <PrivateRoute path="/board/statistic">
+          <p>Board Statistic</p>
+        </PrivateRoute>
+
+        <Route default>
+          <Redirect to="/login"/>
+        </Route>
+      </Switch>
     </Suspense>
   );
 }

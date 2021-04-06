@@ -52,7 +52,13 @@ function LoginPage(): ReactElement {
 
           <S.AntFormItem
             label="Password"
-            name="password">
+            name="password"
+            rules={[
+              {
+                required: true,
+                message: 'You need to fill your password.',
+              },
+            ]}>
             <S.Input placeholder="Enter your password"
                      name="password"
                      type="password"/>

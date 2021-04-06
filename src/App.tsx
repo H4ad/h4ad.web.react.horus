@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react';
 import { hot } from 'react-hot-loader/root'
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import { BrowserRouter } from 'react-router-dom';
 
 import AppRouting from './App.routing';
 import { theme } from './App.theming';
@@ -21,7 +22,9 @@ function App(): ReactElement | null {
     <ThemeProvider theme={theme}>
       <QueryClientProvider client={defaultQueryClient}>
         <GlobalStyles/>
-        <AppRouting/>
+        <BrowserRouter>
+          <AppRouting/>
+        </BrowserRouter>
         <ReactQueryDevtools initialIsOpen={false}/>
       </QueryClientProvider>
     </ThemeProvider>

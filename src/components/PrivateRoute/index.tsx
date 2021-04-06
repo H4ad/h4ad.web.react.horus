@@ -7,7 +7,8 @@ import useAuthStore from '../../store/useAuth';
 function PrivateRoute({ children, ...props }: RouteProps): ReactElement | null {
   const isLogged = useAuthStore((state) => state.isLogged);
 
-  if (isLogged) return <Route {...props}>{children}</Route>;
+  if (isLogged)
+    return <Route {...props}>{children}</Route>;
 
   return (
     <Route
