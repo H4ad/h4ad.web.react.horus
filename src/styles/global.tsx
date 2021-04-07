@@ -147,6 +147,10 @@ export const GlobalStyles: FunctionComponent = () => (
             --safe-area-right: env(safe-area-inset-right);
           }
         }
+        
+        .responsive-list-menu-wrapper-flex {
+          flex-direction: column;
+        }
       `}
     />
   </>

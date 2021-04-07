@@ -1,12 +1,8 @@
 import React, { ReactElement, Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import LockPageManager from './components/LockPageManager';
-
-import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
-import LoginPage from './pages/Login';
-import MainPage from './pages/Main';
-import RegisterPage from './pages/Register';
+import BoardStatistic from './pages/BoardStatistic';
 import useAuthStore from './store/useAuth';
 
 function AppRouting(): ReactElement | null {
@@ -20,24 +16,12 @@ function AppRouting(): ReactElement | null {
 
       <Switch>
         <PublicRoute exact path="/">
-          <Redirect to="/login"/>
+          <Redirect to="/board/statistic"/>
         </PublicRoute>
 
-        <PublicRoute path="/login">
-          <LoginPage/>
+        <PublicRoute path="/board/statistic">
+          <BoardStatistic/>
         </PublicRoute>
-
-        <PublicRoute path="/register">
-          <RegisterPage/>
-        </PublicRoute>
-
-        <PrivateRoute path="/main">
-          <MainPage/>
-        </PrivateRoute>
-
-        <PrivateRoute path="/board/statistic">
-          <p>Board Statistic</p>
-        </PrivateRoute>
 
         <Route default>
           <Redirect to="/login"/>
