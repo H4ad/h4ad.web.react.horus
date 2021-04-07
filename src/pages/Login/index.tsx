@@ -32,13 +32,12 @@ function LoginPage(): ReactElement {
 
   return (
     <S.Page>
-      <S.AntdCard>
+      <S.Card>
         <S.AntdForm layout="vertical" form={form} onFinish={getTokenProxyMutate} hideRequiredMark>
-          <S.Title>Horus</S.Title>
-          <S.SubTitle>Hello! Log in with your email.</S.SubTitle>
+          <S.Title type="h1" value="Horus"/>
+          <S.SubTitle type="h4" value="Hello! Log in with your email."/>
 
           <S.AntFormItem
-            label="Email"
             name="username"
             rules={[
               {
@@ -46,12 +45,15 @@ function LoginPage(): ReactElement {
                 message: 'You need to fill your email.',
               },
             ]}>
-            <S.Input placeholder="Enter your email"
-                     type="email"/>
+            <S.EmailInput required
+                          size="medium"
+                          title="Email"
+                          clearOnIconClick={true}
+                          placeholder="Enter your email"
+                          type="email"/>
           </S.AntFormItem>
 
           <S.AntFormItem
-            label="Password"
             name="password"
             rules={[
               {
@@ -59,18 +61,21 @@ function LoginPage(): ReactElement {
                 message: 'You need to fill your password.',
               },
             ]}>
-            <S.Input placeholder="Enter your password"
-                     name="password"
-                     type="password"/>
+            <S.PasswordInput required
+                             size="medium"
+                             title="Password"
+                             clearOnIconClick={true}
+                             placeholder="Enter your password"
+                             name="password"
+                             type="password"/>
           </S.AntFormItem>
 
-          <S.Button loading={isLoading}
-                    type="primary"
-                    htmlType="submit">Login</S.Button>
+          <S.LoginButton loading={isLoading}
+                         type="submit">Login</S.LoginButton>
 
           <S.ForgotPassword>Don&apos;t have an account? <S.Link to="/register">Register</S.Link></S.ForgotPassword>
         </S.AntdForm>
-      </S.AntdCard>
+      </S.Card>
     </S.Page>
   )
 }

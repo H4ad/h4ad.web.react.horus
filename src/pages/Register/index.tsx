@@ -23,7 +23,10 @@ function RegisterPage(): ReactElement {
   );
 
   const { mutate: getTokenProxyMutate, isLoading: isPerformingLogin } = useCancellableMutation<void, Error>(
-    (cancelToken) => getTokenProxyFromAPI(cancelToken, { username: form.getFieldValue('email'), password: form.getFieldValue('password') }),
+    (cancelToken) => getTokenProxyFromAPI(cancelToken, {
+      username: form.getFieldValue('email'),
+      password: form.getFieldValue('password'),
+    }),
     {
       onError: (error) => createErrorNotification(error.message),
       onSuccess: () => getUserMutate(),
@@ -42,39 +45,44 @@ function RegisterPage(): ReactElement {
 
   return (
     <S.Page>
-      <S.AntdCard>
+      <S.Card>
         <S.AntdForm layout="vertical" form={form} onFinish={createUserMutate} hideRequiredMark>
-          <S.Title>Horus</S.Title>
-          <S.SubTitle>Hello! Please fill in the fields below.</S.SubTitle>
+          <S.Title type="h1" value="Horus"/>
+          <S.SubTitle type="h4" value="Hello! Please fill in the fields below."/>
 
           <S.AntFormItem
-            label="Name"
             name="name"
             rules={[
               {
                 required: true,
                 message: 'You need to fill your name.',
-              }
+              },
             ]}>
-            <S.Input placeholder="Enter your name"
-                     type="text" />
+            <S.NameInput required
+                         size="medium"
+                         title="Name"
+                         clearOnIconClick={true}
+                         placeholder="Enter your name"
+                         type="text"/>
           </S.AntFormItem>
 
           <S.AntFormItem
-            label="Email"
             name="email"
             rules={[
               {
                 required: true,
                 message: 'You need to fill your email.',
-              }
+              },
             ]}>
-          <S.Input placeholder="Enter your email"
-                   type="email"/>
+            <S.EmailInput required
+                          size="medium"
+                          title="Email"
+                          clearOnIconClick={true}
+                          placeholder="Enter your email"
+                          type="email"/>
           </S.AntFormItem>
 
           <S.AntFormItem
-            label="Password"
             name="password"
             rules={[
               {
@@ -82,18 +90,21 @@ function RegisterPage(): ReactElement {
                 message: 'You need to fill your password.',
               },
             ]}>
-          <S.Input placeholder="Enter your password"
-                   name="password"
-                   type="password"/>
+            <S.PasswordInput required
+                             size="medium"
+                             title="Password"
+                             clearOnIconClick={true}
+                             placeholder="Enter your password"
+                             name="password"
+                             type="password"/>
           </S.AntFormItem>
 
-          <S.Button loading={isLoading}
-                    htmlType="submit"
-                    type="primary">Register</S.Button>
+          <S.RegisterButton loading={isLoading}
+                            type="submit">Register</S.RegisterButton>
 
           <S.ForgotPassword>Already have an account? <S.Link to="/login">Login</S.Link></S.ForgotPassword>
         </S.AntdForm>
-      </S.AntdCard>
+      </S.Card>
     </S.Page>
   )
 }

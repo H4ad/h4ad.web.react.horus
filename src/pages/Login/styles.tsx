@@ -1,28 +1,29 @@
 import styled from '@emotion/styled';
-import Card from 'antd/lib/card';
 import Form from 'antd/lib/form/Form';
 import FormItem from 'antd/lib/form/FormItem';
+import Button from 'monday-ui-react-core/dist/Button';
+import Heading from 'monday-ui-react-core/dist/Heading';
+import Input from 'monday-ui-react-core/dist/TextField';
+import DialogContentContainer from 'monday-ui-react-core/dist/DialogContentContainer';
 import { NavLink } from 'react-router-dom';
-import HButton from '../../components/HButton';
-import HInput from '../../components/HInput';
 
 export const Page = styled.main`
   min-height: 100vh;
   width: 100%;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   background-color: ${props => props.theme.colors.light500};
 `;
 
-export const AntdCard = styled(Card)`
+export const Card = styled(DialogContentContainer)`
   border-radius: 16px;
-  
+
   width: 22rem;
-  
-  padding: 1.2rem;
+
+  padding: 2rem;
 `
 
 export const AntdForm = styled(Form)`
@@ -31,33 +32,25 @@ export const AntdForm = styled(Form)`
   align-items: center;
 `
 
-export const Title = styled.h1`
-  font-size: 2rem;
-  line-height: 2.5rem;
-  font-weight: bold;
-  
+export const Title = styled(Heading)`
   color: ${props => props.theme.colors.primaryContrast500};
 `
 
-export const SubTitle = styled.h2`
+export const SubTitle = styled(Heading)`
   margin-top: .5rem;
   margin-bottom: 1rem;
-  
-  font-size: 1rem;
-  line-height: 1.5rem;
-  
+
   color: ${props => props.theme.colors.primaryContrast500};
 `
 
 export const AntFormItem = styled(FormItem)`
-  margin-top: 1rem;
-
   width: 100%;
 `
 
-export const Input = styled(HInput)``
+export const EmailInput = styled(Input)``
+export const PasswordInput = styled(Input)``
 
-export const Button = styled(HButton)`  
+export const LoginButton = styled(Button)`
   min-width: 8rem;
 `
 

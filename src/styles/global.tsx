@@ -1,23 +1,15 @@
 import { css, Global } from '@emotion/react';
-import React from 'react';
-import 'typeface-roboto';
 
+import 'monday-ui-react-core/dist/main.css'
 import './antd.less';
 
-export const GlobalStyles: React.FunctionComponent = () => (
+import { FunctionComponent } from 'react';
+import 'typeface-roboto';
+
+export const GlobalStyles: FunctionComponent = () => (
   <>
     <Global
       styles={css`
-        @font-face {
-          font-family: 'Calisto MT';
-          src: local('Calisto MT'), local('CalistoMT'),
-          url(/assets/fonts/CalistoMT.woff2) format('woff2'),
-          url(/assets/fonts/CalistoMT.woff) format('woff');
-          font-weight: normal;
-          font-style: normal;
-          font-display: swap;
-        }
-
         *,
         *:before,
         *:after {
@@ -79,7 +71,7 @@ export const GlobalStyles: React.FunctionComponent = () => (
           padding: 0;
           border: 0;
           font-size: 100%;
-          font-family: 'Calisto MT', serif;
+          font-family: 'Roboto', serif;
           vertical-align: baseline;
           text-rendering: optimizeLegibility;
           -webkit-font-smoothing: antialiased;
