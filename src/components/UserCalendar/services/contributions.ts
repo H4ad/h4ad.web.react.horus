@@ -8,17 +8,14 @@ import isSameYear from 'date-fns/isSameYear';
 import parseISO from 'date-fns/parseISO';
 import setDay from 'date-fns/setDay';
 import subYears from 'date-fns/subYears';
+import { MondayItem } from '../../../models/proxies/monday';
+import { TaskItemProxy } from '../../../models/proxies/task-item.proxy';
 
-const API_URL = 'https://ancient-butterfly.herokuapp.com/v3/';
 const DATE_FORMAT = 'yyyy-MM-dd';
 
 export type Block = {
   date: string;
-  info?: {
-    date: string;
-    count: number;
-    level: number;
-  };
+  info?: CalendarDataContributionItem;
 };
 
 interface MonthLabel {
@@ -39,21 +36,29 @@ export interface RequestOptions {
   lastYear: boolean;
 }
 
-export interface CalendarData {
-  years: {
-    [year: number]: number;
+export interface CalendarDataContributionItem {
+  date: string;
+  count: number;
+  level: number;
+  items: MondayItem[];
+}
 
-    lastYear: number; // lastYear
-  };
-  contributions: Array<{
-    date: string;
-    count: number;
-    level: number;
-  }>;
+export interface CalendarDataYears {
+  [year: number]: number;
+
+  lastYear: number; // lastYear
+}
+
+export interface CalendarData {
+  userId: number;
+  yearsNumbers: number[];
+  years: CalendarDataYears;
+  contributions: Record<string, CalendarDataContributionItem>;
+  tasks: TaskItemProxy[];
 }
 
 function getContributionsForDate(data: CalendarData, date: string) {
-  return data.contributions.find(contrib => contrib.date === date);
+  return data.contributions[date];
 }
 
 function getBlocksForYear(year: number, data: CalendarData, lastYear: boolean) {

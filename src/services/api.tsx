@@ -2,21 +2,10 @@ import * as baseAxios from 'axios';
 import { CancelToken } from 'axios';
 
 import { environment } from '../environments/environment';
-import useAuthStore from '../store/useAuth';
 
 const axios = baseAxios.default.create({
   baseURL: environment.api.baseUrl,
   timeout: 10 * 1_000,
-});
-
-axios.interceptors.request.use((config) => {
-  const token = useAuthStore.getState().jwt?.token;
-
-  if (!token) return config;
-
-  config.headers.common['Authorization'] = token;
-
-  return config;
 });
 
 declare global {

@@ -1,15 +1,17 @@
 import format from 'date-fns/format';
 import getYear from 'date-fns/getYear';
 import parseISO from 'date-fns/parseISO';
-import React, { CSSProperties, useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import ReactTooltip from 'react-tooltip';
 import { ColorInput } from 'tinycolor2';
+import { getFormattedHoursExtended } from '../../../../utils/hours';
 import { usePrevious } from '../../hooks/usePrevious';
-import { CalendarData, Block, getProcessGraphData, GraphData } from '../../services/contributions';
+import { Block, CalendarData, CalendarDataContributionItem, getProcessGraphData, GraphData } from '../../services/contributions';
 import { createCalendarTheme, getClassName } from '../../utils';
 
-import { DEFAULT_THEME, LINE_HEIGHT, MIN_DISTANCE_MONTH_LABELS, NAMESPACE, Theme } from '../../utils/constants';
+import { DEFAULT_THEME, LINE_HEIGHT, MIN_DISTANCE_MONTH_LABELS, Theme } from '../../utils/constants';
 
-import styles from './styles.css';
+import * as S from './styles';
 
 export type Props = {
   data: CalendarData;
@@ -21,9 +23,9 @@ export type Props = {
   fontSize?: number;
   fullYear?: boolean;
   showTotalCount?: boolean;
-  style?: CSSProperties;
   theme?: Theme;
   years?: Array<number>;
+  onChangeSelectedDays?: (days: Record<string, CalendarDataContributionItem>) => void;
 };
 
 const GitHubCalendar: React.FC<Props> = ({
@@ -37,16 +39,18 @@ const GitHubCalendar: React.FC<Props> = ({
                                            fontSize = 14,
                                            fullYear = true,
                                            showTotalCount = true,
-                                           style = {},
                                            theme = undefined,
+                                           onChangeSelectedDays = undefined,
                                            years = [Number(format(new Date(), 'yyyy'))],
                                          }) => {
   const [graphs, setGraphs] = useState<Array<GraphData> | null>(null);
   const [error, setError] = useState<Error | null>(null);
+  const [selectedDays, setSelectedDays] = useState<Record<string, CalendarDataContributionItem>>({});
 
   const prevYears = usePrevious(years);
   const prevData = usePrevious(data);
   const prevFullYear = usePrevious(fullYear);
+  const prevOnChangeSelectedDays = useRef(onChangeSelectedDays);
 
   const fetchData = useCallback(() => {
     setError(null);
@@ -76,6 +80,15 @@ const GitHubCalendar: React.FC<Props> = ({
     }
   }, [fetchData, fullYear, prevFullYear, prevData, prevYears, data, years]);
 
+  useEffect(() => {
+    console.log(selectedDays);
+
+    if (!prevOnChangeSelectedDays)
+      return;
+
+    prevOnChangeSelectedDays.current(selectedDays);
+  }, [selectedDays]);
+
   function getTheme(): Theme {
     if (theme) {
       return Object.assign({}, DEFAULT_THEME, theme);
@@ -102,7 +115,7 @@ const GitHubCalendar: React.FC<Props> = ({
   function getTooltipMessage(day: Required<Block>) {
     const date = parseISO(day.date);
 
-    return `<strong>${day.info.count} contributions</strong> on ${format(date, dateFormat)}`;
+    return `<strong>${getFormattedHoursExtended(day.info.count)}</strong> on ${format(date, dateFormat)}`;
   }
 
   function renderMonthLabels(monthLabels: GraphData['monthLabels']) {
@@ -128,19 +141,61 @@ const GitHubCalendar: React.FC<Props> = ({
     const theme = getTheme();
     const textHeight = Math.round(fontSize * LINE_HEIGHT);
 
+    const onClickInDay = (day: Block) => {
+      if (!day.info)
+        return;
+
+      if (selectedDays[day.date]) {
+        const days = Object.keys(selectedDays)
+          .filter(selectedDay => selectedDay !== day.date)
+          .reduce((acc, selectedDay) => {
+            acc[selectedDay] = selectedDays[selectedDay];
+
+            return acc;
+          }, { });
+
+        setSelectedDays(days);
+      } else {
+        selectedDays[day.date] = day.info;
+
+        setSelectedDays({
+          ...selectedDays,
+        });
+      }
+    }
+
     return blocks
       .map(week =>
-        week.map((day, y) => (
-          <rect
-            x="0"
-            y={textHeight + (blockSize + blockMargin) * y}
-            width={blockSize}
-            height={blockSize}
-            fill={theme[`grade${day.info ? day.info.level : 0}`]}
-            data-tip={day.info ? getTooltipMessage(day as Required<Block>) : null}
-            key={day.date}
-          />
-        )),
+        week.map((day, y) => {
+          const defaultColor = theme[`grade${day.info ? day.info.level : 0}`];
+
+          return (<>
+            <S.DayRect
+              onClick={() => onClickInDay(day)}
+              x="0"
+              y={textHeight + (blockSize + blockMargin) * y}
+              width={blockSize}
+              height={blockSize}
+              fill={defaultColor}
+              hasInfo={!!day.info}
+              data-tip={day.info ? getTooltipMessage(day as Required<Block>) : null}
+              key={day.date}
+            />
+
+            {day.info && (
+              <S.DayRect
+                onClick={() => onClickInDay(day)}
+                x="2"
+                y={textHeight + (blockSize + blockMargin) * y + 2}
+                width={blockSize * .6}
+                height={blockSize * .6}
+                fill={selectedDays[day.date] ? '#000' : defaultColor}
+                data-tip={day.info ? getTooltipMessage(day as Required<Block>) : null}
+                key={`${day.date}_selected`}
+              />
+            )}
+          </>);
+        }),
       )
       .map((week, x) => (
         <g key={x} transform={`translate(${(blockSize + blockMargin) * x}, 0)`}>
@@ -157,7 +212,7 @@ const GitHubCalendar: React.FC<Props> = ({
         {isCurrentYear && fullYear ? 'Last year' : year}
         {' – '}
         {isCurrentYear && !fullYear ? 'So far ' : null}
-        {totalCount} hours
+        {getFormattedHoursExtended(totalCount)}
       </div>
     );
   }
@@ -171,34 +226,34 @@ const GitHubCalendar: React.FC<Props> = ({
   }
 
   if (!graphs) {
-    return <div className={getClassName('loading', styles.loading)}>Loading …</div>;
+    return <S.Loading>Loading …</S.Loading>;
   }
 
   return (
-    <article className={`${NAMESPACE} ${className || ''}`} style={style}>
+    <S.Calendar className={className}>
       {graphs.map(graph => {
         const { year, blocks, monthLabels, totalCount } = graph;
 
         return (
-          <div key={year} className={getClassName('chart', styles.chart)}>
-            <svg
+          <S.Graph key={year}>
+            <S.SVGGraph
               xmlns="http://www.w3.org/2000/svg"
               width={width}
               height={height}
               viewBox={`0 0 ${width} ${height}`}
-              className={getClassName('calendar', styles.calendar)}
-              style={{ backgroundColor: theme?.background }}
-            >
+              style={{ backgroundColor: theme?.background }}>
               {renderMonthLabels(monthLabels)}
               {renderBlocks(blocks)}
-            </svg>
+            </S.SVGGraph>
+
+            <ReactTooltip delayShow={50} html/>
 
             {showTotalCount && renderTotalCount(year, totalCount)}
             {children}
-          </div>
+          </S.Graph>
         );
       })}
-    </article>
+    </S.Calendar>
   );
 };
 
