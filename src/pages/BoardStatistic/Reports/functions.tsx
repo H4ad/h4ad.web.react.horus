@@ -59,17 +59,13 @@ export function getCalendarDataFromMondayQuery(query: MondayQueryAPI<BoardStatis
           dedupedContributions[task.userId][date] = dedupedContributions[task.userId][date] || {
             date,
             count: 0,
-            level: 3,
             items: [],
           };
 
           dedupedContributions[task.userId][date].count += task.time;
+          dedupedContributions[task.userId][date].items = [...dedupedContributions[task.userId][date].items, item];
 
-          if (!dedupedContributions[task.userId][date].items.some(item => item.id))
-            dedupedContributions[task.userId][date].items.push(item);
-
-          tasks[task.userId] = tasks[task.userId] || [];
-          tasks[task.userId].push(task);
+          tasks[task.userId] = [...(tasks[task.userId] || []), task];
         }
       }
     }

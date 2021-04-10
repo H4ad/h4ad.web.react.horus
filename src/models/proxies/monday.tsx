@@ -43,3 +43,7 @@ export interface MondayTimeTracking {
   updated_at: string;
   status: string;
 }
+
+export enum MondayStorageEnum {
+  CACHED_USERS = '@horus/cached_user',
+}

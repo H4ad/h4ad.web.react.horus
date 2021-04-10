@@ -50,7 +50,7 @@ export function createUseMondayStore(): UseStore<UseMondayStore> {
           },
           selectedDays: {},
           onChangeSelectedDay: onChangeSelectedDays(set, get),
-          openItemCard: (itemId) => monday?.execute('openItemCard', { itemId, kind: 'columns' })
+          openItemCard: (itemId) => monday?.execute('openItemCard', { itemId, kind: 'columns' }),
         };
       },
       name,

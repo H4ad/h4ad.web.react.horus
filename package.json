@@ -32,6 +32,7 @@
     "monday-sdk-js": "^0.1.2",
     "monday-ui-react-core": "^0.0.121",
     "prop-types": "^15.7.2",
+    "rc-picker": "^2.5.10",
     "react": "^17.0.1",
     "react-dom": "npm:@hot-loader/react-dom",
     "react-leaflet": "^3.1.0",

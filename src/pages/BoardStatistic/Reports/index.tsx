@@ -1,9 +1,9 @@
-import Button from 'monday-ui-react-core/dist/Button';
 import { ReactElement, useMemo } from 'react';
 import { useQuery } from 'react-query';
-import { MondayUser } from '../../../models/proxies/monday';
-import { getBoardsInfoForBoardStatistic, getUserInfoByIds } from '../../../services/monday';
+import Button from 'monday-ui-react-core/dist/Button';
+import { getBoardsInfoForBoardStatistic } from '../../../services/monday';
 import useMondayStore from '../../../store/useMonday';
+import useUserStore from '../../../store/useUser';
 import { getFormattedHours } from '../../../utils/hours';
 import { getTimeTrackingLogsFromItem } from '../../../utils/monday';
 import { getCalendarDataFromMondayQuery } from './functions';
@@ -20,49 +20,45 @@ function BoardStatisticReports(): ReactElement {
 
   const settings = useMondayStore(state => state.settings);
 
-  const {
-    isFetching,
-    data,
-  } = useQuery(['boards', boardIds], () => getBoardsInfoForBoardStatistic(monday, boardIds, settings));
+  const usersMap = useUserStore(state => state.usersMap);
+  const fetchUsersByIds = useUserStore(state => state.fetchUsersByIds);
+
+  const { isFetching, data } = useQuery(['boards', boardIds], () => getBoardsInfoForBoardStatistic(monday, boardIds, settings));
 
   const [userIds, calendarDatas] = useMemo(() => !!data ? getCalendarDataFromMondayQuery(data, settings) : [[], []], [data, settings]);
 
-  const {
-    isFetching: isFetchingUsers,
-    data: users,
-  } = useQuery(['users', userIds], () => getUserInfoByIds(monday, userIds));
-
-  const userIdToUser = useMemo<Record<string, MondayUser>>(() => users?.reduce((acc, user) => {
-    acc[user.id] = user;
-
-    return acc;
-  }, {}) || {}, [users]);
+  useQuery(['users', userIds], () => fetchUsersByIds(userIds));
 
   const listByDays = Object.keys(selectedDays).sort((a, b) => a > b ? 1 : -1);
 
-  console.log(selectedDays);
+  return (<>
+    {(isFetching) && (
+      <S.Loading/>
+    )}
 
-  return (
     <S.Section>
-      {(isFetching || isFetchingUsers) && (
-        <S.Loading/>
-      )}
-
       <S.Calendars>
         {calendarDatas.map(calendarData => {
-          const user = userIdToUser[calendarData.userId];
+          const user = usersMap[calendarData.userId];
 
           if (!user)
-            return 'Loading...';
+            return <S.Loading key={`userStatisticLoading_${calendarData.userId}`}/>;
 
           return (
-            <S.UserStatistic key={calendarData.userId}>
+            <S.UserStatistic key={`userStatistic_${user.id}`}>
               <S.User>
                 <S.UserPhoto src={user.photo_thumb_small} alt={user.name}/>
-                <S.UserName type="h2" value={user.name}/>
+
+                <S.UserNameContainer>
+                  <S.UserName type="h2" value={user.name}/>
+                </S.UserNameContainer>
+
+                <S.EditProfile user={user}/>
               </S.User>
-              <S.Calendar years={calendarData.yearsNumbers}
-                          onChangeSelectedDays={(newData) => onChangeSelectedDay(user, newData)}
+              <S.Calendar key={`userStatisticCalendar_${calendarData.userId}`}
+                          years={calendarData.yearsNumbers}
+                          user={user}
+                          onChangeSelectedDays={onChangeSelectedDay}
                           data={calendarData}
                           fullYear={false}/>
             </S.UserStatistic>
@@ -80,10 +76,15 @@ function BoardStatisticReports(): ReactElement {
                 const dayInfo = selectedDays[day][userId];
 
                 return dayInfo.items.map(item => {
-                  const user = userIdToUser[userId];
+                  const user = usersMap[userId];
 
                   const time = getTimeTrackingLogsFromItem(item, settings.timeTrackingColumnId)
-                    .reduce((acc, log) => acc + log.time, 0);
+                    .reduce((acc, log) => {
+                      if (log.startedAt.startsWith(day))
+                        return acc + log.time;
+
+                      return acc;
+                    }, 0);
 
                   return (
                     <S.ItemButtonTooltip key={`itemGroup_${item.id}`} content={item.name}>
@@ -101,7 +102,7 @@ function BoardStatisticReports(): ReactElement {
         })}
       </S.Items>
     </S.Section>
-  )
+  </>)
 }
 
 export default BoardStatisticReports;

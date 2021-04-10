@@ -5,6 +5,7 @@ declare module '@emotion/react' {
     colors: {
       primary500: string,
       primaryContrast500: string,
+      light800: string,
       light500: string,
       light100: string,
     };
@@ -17,5 +18,6 @@ export const theme: Theme = {
     primaryContrast500: '#262626',
     light100: '#FFFFFF',
     light500: '#F5F6FC',
+    light800: '#858585',
   },
 };

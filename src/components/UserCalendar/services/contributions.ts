@@ -39,7 +39,6 @@ export interface RequestOptions {
 export interface CalendarDataContributionItem {
   date: string;
   count: number;
-  level: number;
   items: MondayItem[];
 }
 

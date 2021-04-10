@@ -1,11 +1,13 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import Popover from 'antd/lib/popover';
 import Button from 'monday-ui-react-core/dist/Button';
 import ExpandCollapse from 'monday-ui-react-core/dist/ExpandCollapse';
 import Heading from 'monday-ui-react-core/dist/Heading';
 import Tooltip from 'monday-ui-react-core/dist/Tooltip';
 import HLoading from '../../../components/HLoading';
 import UserCalendar from '../../../components/UserCalendar';
+import EditUserProfile from '../../../components/EditUserProfile';
 
 export const Loading = styled(HLoading)`
   height: 2rem;
@@ -91,7 +93,11 @@ export const UserPhoto = styled.img`
   margin-left: .5rem;
 `;
 
+export const AntdPopover = styled(Popover)``;
+
+export const UserNameContainer = styled.div``
 export const UserName = styled(Heading)``
+export const EditProfile = styled(EditUserProfile)``
 
 export const Calendar = styled(UserCalendar)`
   margin-top: .5rem;

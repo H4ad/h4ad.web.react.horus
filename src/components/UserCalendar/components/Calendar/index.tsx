@@ -1,20 +1,23 @@
 import format from 'date-fns/format';
 import getYear from 'date-fns/getYear';
 import parseISO from 'date-fns/parseISO';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import ReactTooltip from 'react-tooltip';
 import { ColorInput } from 'tinycolor2';
+import { UserProxy } from '../../../../models/proxies/user.proxy';
 import { getFormattedHoursExtended } from '../../../../utils/hours';
 import { usePrevious } from '../../hooks/usePrevious';
 import { Block, CalendarData, CalendarDataContributionItem, getProcessGraphData, GraphData } from '../../services/contributions';
 import { createCalendarTheme, getClassName } from '../../utils';
 
 import { DEFAULT_THEME, LINE_HEIGHT, MIN_DISTANCE_MONTH_LABELS, Theme } from '../../utils/constants';
+import { getLevelByHourAndUser } from './functions';
 
 import * as S from './styles';
 
 export type Props = {
   data: CalendarData;
+  user: UserProxy;
   className?: string;
   blockMargin?: number;
   blockSize?: number;
@@ -25,12 +28,13 @@ export type Props = {
   showTotalCount?: boolean;
   theme?: Theme;
   years?: Array<number>;
-  onChangeSelectedDays?: (days: Record<string, CalendarDataContributionItem>) => void;
+  onChangeSelectedDays?: (user: UserProxy, days: Record<string, CalendarDataContributionItem>) => void;
 };
 
-const GitHubCalendar: React.FC<Props> = ({
+const UserCalendar: React.FC<Props> = ({
                                            className,
                                            data,
+                                           user,
                                            blockMargin = 2,
                                            blockSize = 12,
                                            children,
@@ -81,13 +85,11 @@ const GitHubCalendar: React.FC<Props> = ({
   }, [fetchData, fullYear, prevFullYear, prevData, prevYears, data, years]);
 
   useEffect(() => {
-    console.log(selectedDays);
-
     if (!prevOnChangeSelectedDays)
       return;
 
-    prevOnChangeSelectedDays.current(selectedDays);
-  }, [selectedDays]);
+    prevOnChangeSelectedDays.current(user, selectedDays);
+  }, [user, selectedDays]);
 
   function getTheme(): Theme {
     if (theme) {
@@ -131,7 +133,7 @@ const GitHubCalendar: React.FC<Props> = ({
     }
 
     return monthLabels.map(month => (
-      <text x={(blockSize + blockMargin) * month.x} y={fontSize} key={month.x} style={style}>
+      <text x={(blockSize + blockMargin) * month.x} y={fontSize} key={`monthLabel_${user.id}_${month.x}`} style={style}>
         {month.label}
       </text>
     ));
@@ -152,7 +154,7 @@ const GitHubCalendar: React.FC<Props> = ({
             acc[selectedDay] = selectedDays[selectedDay];
 
             return acc;
-          }, { });
+          }, {});
 
         setSelectedDays(days);
       } else {
@@ -167,9 +169,12 @@ const GitHubCalendar: React.FC<Props> = ({
     return blocks
       .map(week =>
         week.map((day, y) => {
-          const defaultColor = theme[`grade${day.info ? day.info.level : 0}`];
+          const count = day.info?.count || 0;
+          const level = getLevelByHourAndUser(count, user);
 
-          return (<>
+          const defaultColor = theme[`grade${level}`];
+
+          return (<Fragment key={`day_${user.id}_${day.date}`}>
             <S.DayRect
               onClick={() => onClickInDay(day)}
               x="0"
@@ -179,7 +184,6 @@ const GitHubCalendar: React.FC<Props> = ({
               fill={defaultColor}
               hasInfo={!!day.info}
               data-tip={day.info ? getTooltipMessage(day as Required<Block>) : null}
-              key={day.date}
             />
 
             {day.info && (
@@ -191,14 +195,13 @@ const GitHubCalendar: React.FC<Props> = ({
                 height={blockSize * .6}
                 fill={selectedDays[day.date] ? '#000' : defaultColor}
                 data-tip={day.info ? getTooltipMessage(day as Required<Block>) : null}
-                key={`${day.date}_selected`}
               />
             )}
-          </>);
+          </Fragment>);
         }),
       )
       .map((week, x) => (
-        <g key={x} transform={`translate(${(blockSize + blockMargin) * x}, 0)`}>
+        <g key={`week_${user.id}_${x}`} transform={`translate(${(blockSize + blockMargin) * x}, 0)`}>
           {week}
         </g>
       ));
@@ -226,7 +229,7 @@ const GitHubCalendar: React.FC<Props> = ({
   }
 
   if (!graphs) {
-    return <S.Loading>Loading …</S.Loading>;
+    return <S.Loading key={`graphLoading_${user.id}`}>Loading …</S.Loading>;
   }
 
   return (
@@ -235,7 +238,7 @@ const GitHubCalendar: React.FC<Props> = ({
         const { year, blocks, monthLabels, totalCount } = graph;
 
         return (
-          <S.Graph key={year}>
+          <S.Graph key={`graph_${user.id}_${year}`}>
             <S.SVGGraph
               xmlns="http://www.w3.org/2000/svg"
               width={width}
@@ -257,4 +260,4 @@ const GitHubCalendar: React.FC<Props> = ({
   );
 };
 
-export default GitHubCalendar;
+export default UserCalendar;
