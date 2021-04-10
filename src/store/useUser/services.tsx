@@ -101,7 +101,7 @@ export function hydrateUsersFromStorage(set: SetState<UseUserStore>, get: GetSta
 
           const updatedUsers = Object.values(updatedUsersMap);
 
-          set({ users: updatedUsers, usersMap: updatedUsersMap });
+          set({ users: updatedUsers, usersMap: updatedUsersMap, hydrated: true });
         } catch (e) {
           monday.execute('notice', { type: 'error', message: 'An error occur, we cannot get user info from cache.' }).catch(console.error);
         }

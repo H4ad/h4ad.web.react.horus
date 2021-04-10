@@ -11,6 +11,9 @@ import * as S from './styles';
 function BoardStatisticReports(): ReactElement {
   const openItemCard = useMondayStore(state => state.openItemCard);
 
+  const alreadySelectedBoard = useMondayStore(state => state.boardIds.length > 0);
+  const alreadySelectedColumns = useMondayStore(state => !!state.settings?.timeTrackingColumnId && !!state.settings.personColumnId);
+
   const isLoadingData = useMondayStore(state => state.isLoadingData);
   const calendars = useMondayStore(state => state.calendars);
 
@@ -22,6 +25,12 @@ function BoardStatisticReports(): ReactElement {
   const usersMap = useUserStore(state => state.usersMap);
 
   const listByDays = Object.keys(selectedDays).sort((a, b) => a > b ? 1 : -1);
+
+  if (!alreadySelectedBoard)
+    return <S.H2>Sorry, you need to select the board first.</S.H2>
+
+  if (!alreadySelectedColumns)
+    return <S.H2>Sorry, the columns of Person or Time Tracking is missing, please, select these columns first.</S.H2>
 
   return (<>
     {(isLoadingData) && (
@@ -42,7 +51,7 @@ function BoardStatisticReports(): ReactElement {
                 <S.UserPhoto src={user.photo_thumb_small} alt={user.name}/>
 
                 <S.UserNameContainer>
-                  <S.UserName type="h2" value={user.name}/>
+                  <S.H2 type="h2" value={user.name}/>
                 </S.UserNameContainer>
 
                 <S.EditProfile user={user} onClickToExport={type => exportDataByType(type, [user], [calendarData])}/>

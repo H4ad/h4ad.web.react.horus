@@ -51,13 +51,13 @@ export function createUseMondayStore(): UseStore<UseMondayStore> {
         return {
           monday,
           isLoadingData: false,
-          boardIds: [15],
+          boardIds: environment.useMockedData ? [15] : [],
           itemIds: [],
           userIds: [],
           calendars: [],
           settings: {
-            personColumnId: 'person',
-            timeTrackingColumnId: 'time_tracking',
+            personColumnId: environment.useMockedData ? 'person' : '',
+            timeTrackingColumnId: environment.useMockedData ? 'time_tracking' : '',
           },
           selectedDays: {},
           fetchBoardItems: fetchBoardItems(set, get),
