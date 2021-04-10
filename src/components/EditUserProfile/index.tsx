@@ -1,22 +1,26 @@
 import { useForm } from 'antd/lib/form/Form';
-import Button from 'monday-ui-react-core/dist/Button';
+import MenuTitle from 'monday-ui-react-core/dist/MenuTitle';
+import MenuItem from 'monday-ui-react-core/dist/MenuItem';
+import MenuDivider from 'monday-ui-react-core/dist/MenuDivider';
 import IconEdit from 'monday-ui-react-core/dist/icons/Edit';
+import IconNote from 'monday-ui-react-core/dist/icons/Note';
+import IconTable from 'monday-ui-react-core/dist/icons/Table';
+import IconEmbed from 'monday-ui-react-core/dist/icons/Embed';
 import { ReactElement, useMemo, useState } from 'react';
+import { MondayExportEnum } from '../../models/proxies/monday';
 import { UserProxy } from '../../models/proxies/user.proxy';
 import useUserStore from '../../store/useUser';
+import { fromDateToHour } from './functions';
 
 import * as S from './styles';
 
 export type UserPopupProfileProps = {
   className?: string;
   user: UserProxy;
+  onClickToExport: (type: MondayExportEnum) => void;
 }
 
-function fromDateToHour(date: Date): number {
-  return date.getHours() + date.getMinutes() / 60;
-}
-
-function EditUserProfile({ user, className }: UserPopupProfileProps): ReactElement {
+function EditUserProfile({ user, className, onClickToExport }: UserPopupProfileProps): ReactElement {
   const [form] = useForm<{ name: string, workTime: Date }>();
 
   const [visible, setVisible] = useState(false);
@@ -48,9 +52,19 @@ function EditUserProfile({ user, className }: UserPopupProfileProps): ReactEleme
   }
 
   return (<>
-    <S.EditButton className={className} kind={Button.kinds.TERTIARY} onClick={() => setVisible(true)}>
-      <S.EditButtonIcon icon={IconEdit} ignoreFocusStyle/>
-    </S.EditButton>
+    <S.EditContainer className={className}>
+      <S.EditMenuButton size="medium">
+        <S.EditMenu size="medium">
+          <MenuTitle caption="User" captionPosition="top"/>
+          <MenuItem icon={IconEdit} iconType="SVG" title="Edit User" onClick={() => setVisible(true)}/>
+          <MenuDivider/>
+          <MenuTitle caption="Export Options" captionPosition="top"/>
+          <MenuItem icon={IconNote} iconType="SVG" title="Export hours in CSV" onClick={() => onClickToExport(MondayExportEnum.CSV)}/>
+          <MenuItem icon={IconTable} iconType="SVG" title="Export hours in Excel" onClick={() => onClickToExport(MondayExportEnum.EXCEL)}/>
+          <MenuItem icon={IconEmbed} iconType="SVG" title="Export hours in JSON" onClick={() => onClickToExport(MondayExportEnum.JSON)}/>
+        </S.EditMenu>
+      </S.EditMenuButton>
+    </S.EditContainer>
 
     <S.Modal visible={visible}
              onCancel={() => setVisible(false)}>

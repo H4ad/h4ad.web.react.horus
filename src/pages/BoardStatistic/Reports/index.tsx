@@ -6,7 +6,7 @@ import useMondayStore from '../../../store/useMonday';
 import useUserStore from '../../../store/useUser';
 import { getFormattedHours } from '../../../utils/hours';
 import { getTimeTrackingLogsFromItem } from '../../../utils/monday';
-import { getCalendarDataFromMondayQuery } from './functions';
+import { exportDataByType, getCalendarDataFromMondayQuery } from './functions';
 
 import * as S from './styles';
 
@@ -53,7 +53,7 @@ function BoardStatisticReports(): ReactElement {
                   <S.UserName type="h2" value={user.name}/>
                 </S.UserNameContainer>
 
-                <S.EditProfile user={user}/>
+                <S.EditProfile user={user} onClickToExport={type => exportDataByType(type, [user], [calendarData])}/>
               </S.User>
               <S.Calendar key={`userStatisticCalendar_${calendarData.userId}`}
                           years={calendarData.yearsNumbers}

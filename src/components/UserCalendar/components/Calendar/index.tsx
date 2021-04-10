@@ -191,8 +191,8 @@ const UserCalendar: React.FC<Props> = ({
                 onClick={() => onClickInDay(day)}
                 x="2"
                 y={textHeight + (blockSize + blockMargin) * y + 2}
-                width={blockSize * .6}
-                height={blockSize * .6}
+                width={(blockSize || 0) * .6}
+                height={(blockSize || 0) * .6}
                 fill={selectedDays[day.date] ? '#000' : defaultColor}
                 data-tip={day.info ? getTooltipMessage(day as Required<Block>) : null}
               />

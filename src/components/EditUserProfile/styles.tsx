@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import Form from 'antd/lib/form/Form';
 import FormItem from 'antd/lib/form/FormItem';
+import MenuButton from 'monday-ui-react-core/dist/MenuButton';
+import Menu from 'monday-ui-react-core/dist/Menu';
 import Button from 'monday-ui-react-core/dist/Button';
 import Heading from 'monday-ui-react-core/dist/Heading';
 import Icon from 'monday-ui-react-core/dist/Icon';
@@ -11,6 +13,21 @@ import HModal from '../Modal';
 export const Modal = styled(HModal)`
   width: 30rem;
 `;
+
+export const EditMenuButton = styled(MenuButton)``;
+
+export const EditContainer = styled.div`
+  height: 2rem;
+  width: 2.5rem;
+  margin-left: auto;
+  
+  button {
+    height: 100%;
+    width: 100%;
+  }
+`
+
+export const EditMenu = styled(Menu)``;
 
 export const EditButton = styled(Button)`
   margin: 0 .5rem;

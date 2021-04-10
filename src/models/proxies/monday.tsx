@@ -47,3 +47,9 @@ export interface MondayTimeTracking {
 export enum MondayStorageEnum {
   CACHED_USERS = '@horus/cached_user',
 }
+
+export enum MondayExportEnum {
+  JSON = 'json',
+  CSV = 'csv',
+  EXCEL = 'excel',
+}

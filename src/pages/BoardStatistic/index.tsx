@@ -1,8 +1,6 @@
 import Button from 'monday-ui-react-core/dist/Button';
 import IconEmbed from 'monday-ui-react-core/dist/icons/Embed';
 import IconGraph from 'monday-ui-react-core/dist/icons/Graph';
-import IconInfo from 'monday-ui-react-core/dist/icons/Info';
-import IconTeam from 'monday-ui-react-core/dist/icons/Team';
 import ResponsiveList from 'monday-ui-react-core/dist/ResponsiveList';
 import { ReactElement } from 'react';
 import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
@@ -25,16 +23,6 @@ function BoardStatistic(): ReactElement {
           Reports
         </S.TabItem>
 
-        <S.TabItem onClick={redirectTo('tags')} kind={getButtonKindForPath('tags')}>
-          <S.TabItemIcon icon={IconInfo} ignoreFocusStyle/>
-          Tags
-        </S.TabItem>
-
-        <S.TabItem onClick={redirectTo('users')} kind={getButtonKindForPath('users')}>
-          <S.TabItemIcon icon={IconTeam} ignoreFocusStyle/>
-          Users
-        </S.TabItem>
-
         <S.TabItem onClick={redirectTo('export')} kind={getButtonKindForPath('export')}>
           <S.TabItemIcon icon={IconEmbed} ignoreFocusStyle/>
           Export
@@ -49,14 +37,6 @@ function BoardStatistic(): ReactElement {
 
           <Route path="/board/statistic/reports">
             <BoardStatisticReports/>
-          </Route>
-
-          <Route path="/board/statistic/tags">
-            <p>Tags</p>
-          </Route>
-
-          <Route path="/board/statistic/users">
-            <p>Users</p>
           </Route>
 
           <Route path="/board/statistic/export">
