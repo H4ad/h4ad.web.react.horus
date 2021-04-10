@@ -45,7 +45,7 @@ export function fetchUsersByIds(set: SetState<UseUserStore>, get: GetState<UseUs
 
     return await getUserInfoByIds(monday, userIds)
       .then(users => {
-        const updatedUsersMap = {};
+        const updatedUsersMap: Record<string, UserProxy> = {};
         const usersMap = get().usersMap;
 
         for (const user of users) {
@@ -56,7 +56,7 @@ export function fetchUsersByIds(set: SetState<UseUserStore>, get: GetState<UseUs
           }
         }
 
-        const updatedUsers = Object.values(usersMap);
+        const updatedUsers = Object.values(updatedUsersMap);
 
         set({ users: updatedUsers, usersMap: updatedUsersMap });
 

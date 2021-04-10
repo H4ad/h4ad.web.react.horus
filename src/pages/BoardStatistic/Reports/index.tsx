@@ -1,19 +1,18 @@
-import { ReactElement, useMemo } from 'react';
-import { useQuery } from 'react-query';
+import { ReactElement } from 'react';
 import Button from 'monday-ui-react-core/dist/Button';
-import { getBoardsInfoForBoardStatistic } from '../../../services/monday';
 import useMondayStore from '../../../store/useMonday';
 import useUserStore from '../../../store/useUser';
 import { getFormattedHours } from '../../../utils/hours';
 import { getTimeTrackingLogsFromItem } from '../../../utils/monday';
-import { exportDataByType, getCalendarDataFromMondayQuery } from './functions';
+import { exportDataByType } from './functions';
 
 import * as S from './styles';
 
 function BoardStatisticReports(): ReactElement {
-  const monday = useMondayStore(state => state.monday);
-  const boardIds = useMondayStore(state => state.boardIds);
   const openItemCard = useMondayStore(state => state.openItemCard);
+
+  const isLoadingData = useMondayStore(state => state.isLoadingData);
+  const calendars = useMondayStore(state => state.calendars);
 
   const selectedDays = useMondayStore(state => state.selectedDays);
   const onChangeSelectedDay = useMondayStore(state => state.onChangeSelectedDay);
@@ -21,24 +20,17 @@ function BoardStatisticReports(): ReactElement {
   const settings = useMondayStore(state => state.settings);
 
   const usersMap = useUserStore(state => state.usersMap);
-  const fetchUsersByIds = useUserStore(state => state.fetchUsersByIds);
-
-  const { isFetching, data } = useQuery(['boards', boardIds], () => getBoardsInfoForBoardStatistic(monday, boardIds, settings));
-
-  const [userIds, calendarDatas] = useMemo(() => !!data ? getCalendarDataFromMondayQuery(data, settings) : [[], []], [data, settings]);
-
-  useQuery(['users', userIds], () => fetchUsersByIds(userIds));
 
   const listByDays = Object.keys(selectedDays).sort((a, b) => a > b ? 1 : -1);
 
   return (<>
-    {(isFetching) && (
+    {(isLoadingData) && (
       <S.Loading/>
     )}
 
     <S.Section>
       <S.Calendars>
-        {calendarDatas.map(calendarData => {
+        {calendars.map(calendarData => {
           const user = usersMap[calendarData.userId];
 
           if (!user)

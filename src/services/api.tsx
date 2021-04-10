@@ -1,10 +1,7 @@
 import * as baseAxios from 'axios';
 import { CancelToken } from 'axios';
 
-import { environment } from '../environments/environment';
-
 const axios = baseAxios.default.create({
-  baseURL: environment.api.baseUrl,
   timeout: 10 * 1_000,
 });
 
@@ -24,7 +21,7 @@ export function cancellableRequest<T>(
   promise.cancel = () => {
     console.log('Cancelado...');
 
-    source.cancel('A operação não foi concluída, a requisição foi cancelada.');
+    source.cancel('The operation was not completed, the requisition was canceled.');
   };
 
   return promise;

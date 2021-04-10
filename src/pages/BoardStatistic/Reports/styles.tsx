@@ -1,27 +1,19 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Popover from 'antd/lib/popover';
 import Button from 'monday-ui-react-core/dist/Button';
 import ExpandCollapse from 'monday-ui-react-core/dist/ExpandCollapse';
 import Heading from 'monday-ui-react-core/dist/Heading';
 import Tooltip from 'monday-ui-react-core/dist/Tooltip';
+import EditUserProfile from '../../../components/EditUserProfile';
 import HLoading from '../../../components/HLoading';
 import UserCalendar from '../../../components/UserCalendar';
-import EditUserProfile from '../../../components/EditUserProfile';
 
 export const Loading = styled(HLoading)`
   height: 2rem;
   width: 2rem;
-  
+
   margin: 0 auto;
 `;
-
-export const LoadingSVGClassName = css`
-  height: 2rem;
-  width: 2rem;
-  
-  margin: 0 auto;
-`
 
 export const Section = styled.section`
   display: flex;
@@ -37,14 +29,14 @@ export const Calendars = styled.div`
 
 export const Items = styled.div`
   width: 40%;
-  
+
   padding-left: 1rem;
 `;
 
 export const ItemGroup = styled(ExpandCollapse)`
   margin-bottom: 1rem;
   width: 100%;
-  
+
   .expand-collapse {
     width: 100%;
   }
@@ -59,15 +51,15 @@ export const ItemButton = styled(Button)`
   min-width: 100%;
   display: flex;
   justify-content: flex-start;
-  
+
   margin-bottom: 1rem;
 `;
 
 export const ItemButtonText = styled.p`
   display: block;
-  
+
   height: 100%;
-  
+
   max-width: calc(100% - 2rem);
   overflow-x: hidden;
   text-overflow: ellipsis;
@@ -80,7 +72,7 @@ export const UserStatistic = styled.div`
 
 export const User = styled.div`
   display: flex;
-  
+
   align-items: center;
 `;
 
@@ -88,7 +80,7 @@ export const UserPhoto = styled.img`
   border-radius: 50%;
   height: 2rem;
   width: 2rem;
-  
+
   margin-right: .5rem;
   margin-left: .5rem;
 `;

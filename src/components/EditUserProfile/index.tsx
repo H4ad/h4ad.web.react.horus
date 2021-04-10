@@ -53,7 +53,7 @@ function EditUserProfile({ user, className, onClickToExport }: UserPopupProfileP
 
   return (<>
     <S.EditContainer className={className}>
-      <S.EditMenuButton size="medium">
+      <S.EditMenuButton size="40">
         <S.EditMenu size="medium">
           <MenuTitle caption="User" captionPosition="top"/>
           <MenuItem icon={IconEdit} iconType="SVG" title="Edit User" onClick={() => setVisible(true)}/>

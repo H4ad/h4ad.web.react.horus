@@ -1,5 +1,8 @@
 import { GetState, SetState } from 'zustand';
 import { CalendarDataContributionItem } from '../../components/UserCalendar/services/contributions';
+import { getCalendarDataFromMondayQuery } from '../../pages/BoardStatistic/Reports/functions';
+import { getBoardsInfoForBoardStatistic } from '../../services/monday';
+import useUserStore from '../useUser';
 import { UseMondayStore } from './models';
 
 export function onChangeSelectedDays(set: SetState<UseMondayStore>, get: GetState<UseMondayStore>): UseMondayStore['onChangeSelectedDay'] {
@@ -35,5 +38,28 @@ export function onChangeSelectedDays(set: SetState<UseMondayStore>, get: GetStat
     }
 
     set({ selectedDays: newSelectedDaysMap });
+  }
+}
+
+export function fetchBoardItems (set: SetState<UseMondayStore>, get: GetState<UseMondayStore>): UseMondayStore['fetchBoardItems'] {
+  return async function() {
+    const monday = get().monday;
+    const boardIds = get().boardIds;
+    const settings = get().settings;
+
+    set({ isLoadingData: true });
+
+    try {
+      const result = await getBoardsInfoForBoardStatistic(monday, boardIds, settings);
+      const [userIds, calendars] = getCalendarDataFromMondayQuery(result, settings);
+
+      set({ userIds, calendars });
+
+      await useUserStore.getState().fetchUsersByIds(userIds);
+    } catch (e) {
+      await monday.execute('notice', { type: 'error', message: 'An error occur when trying getting board data, please, refresh the page.' });
+    } finally {
+      set({ isLoadingData: false });
+    }
   }
 }

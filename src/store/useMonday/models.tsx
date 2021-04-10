@@ -1,5 +1,5 @@
 import { MondayClientSdk } from '../../@types/monday-sdk-js';
-import { CalendarDataContributionItem } from '../../components/UserCalendar/services/contributions';
+import { CalendarData, CalendarDataContributionItem } from '../../components/UserCalendar/services/contributions';
 import { MondayUser } from '../../models/proxies/monday';
 
 export type MondayListenEvent = {
@@ -27,8 +27,12 @@ export type UseMondayStore = {
     personColumnId?: string;
     timeTrackingColumnId?: string;
   };
+  isLoadingData: boolean;
   boardIds: number[];
+  userIds: number[];
+  calendars: CalendarData[];
 
+  fetchBoardItems: () => Promise<void>;
   selectedDays: Record<string, Record<string, CalendarDataContributionItem>>;
   onChangeSelectedDay: (user: MondayUser, newData: Record<string, CalendarDataContributionItem>) => void;
 

@@ -2,9 +2,6 @@ export const environment = {
   enablePWA: false,
   useMockedData: process.env.REACT_APP_USE_MOCKED_DATA === 'true',
   zustandStoreVersion: 1,
-  api: {
-    baseUrl: process.env.REACT_APP_BASE_URL,
-  },
   graphql: {
     getBoardsInfoForBoardStatistic: `query {
       boards(ids:[{boardIds}]) {

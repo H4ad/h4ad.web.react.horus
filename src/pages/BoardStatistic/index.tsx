@@ -1,9 +1,9 @@
 import Button from 'monday-ui-react-core/dist/Button';
 import IconEmbed from 'monday-ui-react-core/dist/icons/Embed';
 import IconGraph from 'monday-ui-react-core/dist/icons/Graph';
-import ResponsiveList from 'monday-ui-react-core/dist/ResponsiveList';
 import { ReactElement } from 'react';
 import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
+import BoardStatisticExports from './Exports';
 import BoardStatisticReports from './Reports';
 
 import * as S from './styles';
@@ -17,7 +17,7 @@ function BoardStatistic(): ReactElement {
 
   return (
     <S.Page>
-      <S.Tab menuButtonSize={ResponsiveList.menuButtonSizes.MEDIUM}>
+      <S.Tab menuButtonSize="40">
         <S.TabItem onClick={redirectTo('reports')} kind={getButtonKindForPath('reports')}>
           <S.TabItemIcon icon={IconGraph} ignoreFocusStyle/>
           Reports
@@ -40,7 +40,7 @@ function BoardStatistic(): ReactElement {
           </Route>
 
           <Route path="/board/statistic/export">
-            <p>Export</p>
+            <BoardStatisticExports/>
           </Route>
 
           <Route default>
