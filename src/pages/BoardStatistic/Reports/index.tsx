@@ -38,8 +38,16 @@ function BoardStatisticReports(): ReactElement {
     return acc;
   }, {}) || {}, [users]);
 
+  const listByDays = Object.keys(selectedDays).sort((a, b) => a > b ? 1 : -1);
+
+  console.log(selectedDays);
+
   return (
     <S.Section>
+      {(isFetching || isFetchingUsers) && (
+        <S.Loading/>
+      )}
+
       <S.Calendars>
         {calendarDatas.map(calendarData => {
           const user = userIdToUser[calendarData.userId];
@@ -62,12 +70,16 @@ function BoardStatisticReports(): ReactElement {
         })}
       </S.Calendars>
       <S.Items>
-        {Object.keys(selectedDays).map(day => {
+        {listByDays.map(day => {
+          const userIds = Object.keys(selectedDays[day]);
+
           return (
             <S.ItemGroup key={`itemGroup_${day}`}
                          headerComponentRenderer={() => <S.ItemGroupHeader type="h3" value={day}/>}>
-              {Object.keys(selectedDays[day]).map(userId => (
-                selectedDays[day][userId].items.map(item => {
+              {userIds.map(userId => {
+                const dayInfo = selectedDays[day][userId];
+
+                return dayInfo.items.map(item => {
                   const user = userIdToUser[userId];
 
                   const time = getTimeTrackingLogsFromItem(item, settings.timeTrackingColumnId)
@@ -81,9 +93,9 @@ function BoardStatisticReports(): ReactElement {
                         <S.ItemButtonText>({getFormattedHours(time)}) - {item.name}</S.ItemButtonText>
                       </S.ItemButton>
                     </S.ItemButtonTooltip>
-                  )
-                })
-              ))}
+                  );
+                });
+              })}
             </S.ItemGroup>
           )
         })}

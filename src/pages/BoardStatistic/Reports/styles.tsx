@@ -1,12 +1,30 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import Heading from 'monday-ui-react-core/dist/Heading';
-import ExpandCollapse from 'monday-ui-react-core/dist/ExpandCollapse';
 import Button from 'monday-ui-react-core/dist/Button';
+import ExpandCollapse from 'monday-ui-react-core/dist/ExpandCollapse';
+import Heading from 'monday-ui-react-core/dist/Heading';
 import Tooltip from 'monday-ui-react-core/dist/Tooltip';
+import HLoading from '../../../components/HLoading';
 import UserCalendar from '../../../components/UserCalendar';
+
+export const Loading = styled(HLoading)`
+  height: 2rem;
+  width: 2rem;
+  
+  margin: 0 auto;
+`;
+
+export const LoadingSVGClassName = css`
+  height: 2rem;
+  width: 2rem;
+  
+  margin: 0 auto;
+`
 
 export const Section = styled.section`
   display: flex;
+  max-width: 1280px;
+  margin: 0 auto;
 `;
 
 export const Calendars = styled.div`

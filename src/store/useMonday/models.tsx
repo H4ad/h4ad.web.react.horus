@@ -1,8 +1,27 @@
+import { MondayClientSdk } from '../../@types/monday-sdk-js';
 import { CalendarDataContributionItem } from '../../components/UserCalendar/services/contributions';
 import { MondayUser } from '../../models/proxies/monday';
 
+export type MondayListenEvent = {
+  data: number[];
+}
+
+export type MondaySettingsEvent = {
+  data: {
+    personColumn?: string;
+    timeTrackingColumn?: string;
+  };
+}
+
+export type MondayContextEvent = {
+  data: {
+    boardIds?: number[];
+    boardId?: number;
+  };
+}
+
 export type UseMondayStore = {
-  monday: any;
+  monday: MondayClientSdk;
   itemIds: number[];
   settings?: {
     personColumnId?: string;

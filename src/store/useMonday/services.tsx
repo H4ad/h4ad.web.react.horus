@@ -19,10 +19,13 @@ export function onChangeSelectedDays(set: SetState<UseMondayStore>, get: GetStat
       };
     }
 
-    const oldDays = Object.keys(oldValues).filter(day => !newData[day]?.items);
+    const oldDays = Object.keys(oldValues);
 
     for (const day of oldDays) {
       const userIds = Object.keys(oldValues[day]).filter(userId => +userId !== user.id);
+
+      if (userIds.length === 0)
+        continue;
 
       newSelectedDaysMap[day] = newSelectedDaysMap[day] || {};
 

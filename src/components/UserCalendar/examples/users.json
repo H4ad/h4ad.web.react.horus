@@ -1,0 +1,19 @@
+{
+  "data": {
+    "users": [
+      {
+        "id": 17277242,
+        "name": "Vinícius Lourenço",
+        "email": "vinicius.cardoso23@etec.sp.gov.br",
+        "photo_thumb_small": "https://files.monday.com/use1/photos/17277242/thumb_small/17277242-data?1605827322"
+      },
+      {
+        "id": 17405111,
+        "name": "person2@gmail.com",
+        "email": "person2@gmail.com",
+        "photo_thumb_small": "https://cdn1.monday.com/dapulse_default_photo.png"
+      }
+    ]
+  },
+  "account_id": 7590799
+}

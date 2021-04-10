@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import HLoading from '../../../HLoading';
 
 export const DayRect = styled.rect<{ hasInfo?: boolean }>`
   ${props => props.hasInfo && `
@@ -15,9 +16,12 @@ export const Graph = styled.div`
   width: 100%;
 `;
 
-export const Loading = styled.p`
-  margin: 0;
-  font-size: 90%;
+export const Loading = styled(HLoading)`
+  height: 2rem;
+  width: 2rem;
+  
+  margin-top: .5rem;
+  margin-left: .5rem;
 `;
 
 export const SVGGraph = styled.svg`

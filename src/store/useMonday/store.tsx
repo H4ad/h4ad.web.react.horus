@@ -1,11 +1,12 @@
 import mondaySdk from 'monday-sdk-js';
 import create, { UseStore } from 'zustand';
 import { devtools } from 'zustand/middleware';
+import { MondayClientSdk } from '../../@types/monday-sdk-js';
 import { getStoreName } from '../utils/functions';
-import { UseMondayStore } from './models';
+import { MondayContextEvent, MondayListenEvent, MondaySettingsEvent, UseMondayStore } from './models';
 import { onChangeSelectedDays } from './services';
 
-const monday = mondaySdk()
+const monday: MondayClientSdk = mondaySdk()
 
 export function createUseMondayStore(): UseStore<UseMondayStore> {
   const name = getStoreName('useMondayStore');
@@ -13,13 +14,13 @@ export function createUseMondayStore(): UseStore<UseMondayStore> {
   return create(
     devtools(
       (set, get) => {
-        monday.listen('itemIds', res => {
+        monday.listen<MondayListenEvent>('itemIds', res => {
           console.log(res);
 
           set({ itemIds: res.data });
         });
 
-        monday.listen('settings', res => {
+        monday.listen<MondaySettingsEvent>('settings', res => {
           console.log(res);
 
           const { personColumn, timeTrackingColumn, ...settings } = res.data;
@@ -33,7 +34,7 @@ export function createUseMondayStore(): UseStore<UseMondayStore> {
           });
         });
 
-        monday.listen('context', res => {
+        monday.listen<MondayContextEvent>('context', res => {
           console.log(res);
 
           set({ boardIds: res.data.boardIds || [res.data.boardId] });
