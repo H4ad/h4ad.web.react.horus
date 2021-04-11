@@ -16,21 +16,44 @@ export function createUseMondayStore(): UseStore<UseMondayStore> {
     devtools(
       (set, get) => {
         monday.listen<MondayListenEvent>('itemIds', res => {
-          console.log(res);
-
           set({ itemIds: res.data });
         });
 
         monday.listen<MondaySettingsEvent>('settings', res => {
-          console.log(res);
-
           const { personColumn, timeTrackingColumn, ...settings } = res.data;
+
+          if (!personColumn)
+            return;
+
+          if (!timeTrackingColumn)
+            return;
+
+          for (const key of Object.keys(personColumn)) {
+            if (Array.isArray(personColumn[key]))
+              continue;
+
+            personColumn.default = [key];
+
+            delete personColumn[key];
+          }
+
+          for (const key of Object.keys(timeTrackingColumn)) {
+            if (Array.isArray(timeTrackingColumn[key]))
+              continue;
+
+            timeTrackingColumn.default = [key];
+
+            delete timeTrackingColumn[key];
+          }
+
+          const { default: personDefault, ...personColumns } = personColumn;
+          const { default: timeTrackingDefault, ...timeTrackingColumns } = timeTrackingColumn;
 
           set({
             settings: {
               ...settings,
-              timeTrackingColumnId: Object.keys(timeTrackingColumn || {})[0],
-              personColumnId: Object.keys(personColumn || {})[0],
+              timeTrackingColumnId: { default: timeTrackingDefault, ...timeTrackingColumns },
+              personColumnId: { default: personDefault, ...personColumns },
             },
           });
 
@@ -62,8 +85,12 @@ export function createUseMondayStore(): UseStore<UseMondayStore> {
           userIds: [],
           calendars: [],
           settings: {
-            personColumnId: environment.useMockedData ? 'person' : '',
-            timeTrackingColumnId: environment.useMockedData ? 'time_tracking' : '',
+            personColumnId: {
+              default: [environment.useMockedData ? 'person' : ''],
+            },
+            timeTrackingColumnId: {
+              default: [environment.useMockedData ? 'time_tracking' : ''],
+            },
           },
           selectedDays: {},
           fetchBoardItems: fetchBoardItems(set, get),

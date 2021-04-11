@@ -39,7 +39,7 @@ export interface RequestOptions {
 export interface CalendarDataContributionItem {
   date: string;
   count: number;
-  items: MondayItem[];
+  items: (MondayItem & { boardId: string })[];
 }
 
 export interface CalendarDataYears {

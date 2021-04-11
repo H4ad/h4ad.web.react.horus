@@ -3,25 +3,32 @@ import { environment } from '../environments/environment';
 import { BoardStatisticQuery } from '../models/proxies/board-statistics.query';
 import { MondayQueryAPI, MondayUser } from '../models/proxies/monday';
 import { UseMondayStore } from '../store/useMonday';
+import { getColumnsStoreInList } from '../store/useMonday/functions';
 
-export async function getBoardsInfoForBoardStatistic(monday: MondayClientSdk, boardIds: number[], settings: UseMondayStore['settings']): Promise<MondayQueryAPI<BoardStatisticQuery>>  {
+export async function getBoardsInfoForBoardStatistic(monday: MondayClientSdk, boardIds: number[], settings: UseMondayStore['settings']): Promise<MondayQueryAPI<BoardStatisticQuery>> {
   if (environment.useMockedData)
     return import('../components/UserCalendar/examples/ermes.json').then(result => ({ data: result.data, account_id: result.account_id }));
 
-  if (!settings.timeTrackingColumnId || !settings.personColumnId)
-    return null;
+  const timeTrackingColumns = getColumnsStoreInList(settings.timeTrackingColumnId);
+  const personColumns = getColumnsStoreInList(settings.personColumnId);
+
+  if (timeTrackingColumns.length === 0)
+    return { data: { boards: [] }, account_id: 0 };
+
+  if (personColumns.length === 0)
+    return { data: { boards: [] }, account_id: 0 };
 
   if (!monday)
-    return null;
+    return { data: { boards: [] }, account_id: 0 };
 
   const query = environment.graphql.getBoardsInfoForBoardStatistic
     .replace('{boardIds}', boardIds.join(','))
-    .replace('{columnValueIds}', JSON.stringify([settings.timeTrackingColumnId, settings.personColumnId]));
+    .replace('{columnValueIds}', JSON.stringify([...timeTrackingColumns, ...personColumns].flat(2)));
 
   return monday.api(query);
 }
 
-export async function getUserInfoByIds(monday: MondayClientSdk, userIds: number[]): Promise<MondayUser[]>  {
+export async function getUserInfoByIds(monday: MondayClientSdk, userIds: number[]): Promise<MondayUser[]> {
   if (environment.useMockedData)
     return import('../components/UserCalendar/examples/users.json').then(result => [...result?.data?.users]);
 

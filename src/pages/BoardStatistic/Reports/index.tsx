@@ -1,10 +1,11 @@
 import { ReactElement } from 'react';
 import Button from 'monday-ui-react-core/dist/Button';
 import useMondayStore from '../../../store/useMonday';
+import { getColumnsStoreInList } from '../../../store/useMonday/functions';
 import useUserStore from '../../../store/useUser';
+import { exportDataByType } from '../../../utils/export';
 import { getFormattedHours } from '../../../utils/hours';
 import { getTimeTrackingLogsFromItem } from '../../../utils/monday';
-import { exportDataByType } from './functions';
 
 import * as S from './styles';
 
@@ -12,7 +13,8 @@ function BoardStatisticReports(): ReactElement {
   const openItemCard = useMondayStore(state => state.openItemCard);
 
   const alreadySelectedBoard = useMondayStore(state => state.boardIds.length > 0);
-  const alreadySelectedColumns = useMondayStore(state => !!state.settings?.timeTrackingColumnId && !!state.settings.personColumnId);
+  const timeTrackingColumnList = useMondayStore(state => getColumnsStoreInList(state.settings.timeTrackingColumnId));
+  const personColumnList = useMondayStore(state => getColumnsStoreInList(state.settings.personColumnId));
 
   const isLoadingData = useMondayStore(state => state.isLoadingData);
   const calendars = useMondayStore(state => state.calendars);
@@ -29,8 +31,11 @@ function BoardStatisticReports(): ReactElement {
   if (!alreadySelectedBoard)
     return <S.HeaderText type="h2" value="Sorry, you need to select the board first." />
 
-  if (!alreadySelectedColumns)
-    return <S.HeaderText type="h2" value="Sorry, the columns of Person or Time Tracking is missing, please, select these columns first."/>
+  if (timeTrackingColumnList.length === 0)
+    return <S.HeaderText type="h2" value="Sorry, the columns of Time Tracking is missing, please, select these columns first."/>
+
+  if (personColumnList.length === 0)
+    return <S.HeaderText type="h2" value="Sorry, the columns of Person is missing, please, select these columns first."/>
 
   return (<>
     {(isLoadingData) && (
@@ -43,7 +48,7 @@ function BoardStatisticReports(): ReactElement {
           const user = usersMap[calendarData.userId];
 
           if (!user)
-            return <S.Loading key={`userStatisticLoading_${calendarData.userId}`}/>;
+            return null;
 
           return (
             <S.UserStatistic key={`userStatistic_${user.id}`}>
@@ -79,7 +84,9 @@ function BoardStatisticReports(): ReactElement {
                 return dayInfo.items.map(item => {
                   const user = usersMap[userId];
 
-                  const time = getTimeTrackingLogsFromItem(item, settings.timeTrackingColumnId)
+                  const timeTrackingColumn = settings.timeTrackingColumnId[item.boardId] || settings.timeTrackingColumnId.default;
+
+                  const time = getTimeTrackingLogsFromItem(item, timeTrackingColumn)
                     .reduce((acc, log) => {
                       if (log.startedAt.startsWith(day))
                         return acc + log.time;

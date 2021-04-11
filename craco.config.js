@@ -23,6 +23,7 @@ module.exports = function () {
       },
     ],
     webpack: {
+      alias: { './dist/cpexcel.js': '' },
       module: {
         rules: [
           {

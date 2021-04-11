@@ -6,10 +6,22 @@ export type MondayListenEvent = {
   data: number[];
 }
 
+export type MondayColumn = {
+  [key: string]: string[] | string;
+
+  default?: string[];
+};
+
+export type MondayColumnStore = {
+  [key: string]: string[];
+
+  default?: string[];
+};
+
 export type MondaySettingsEvent = {
   data: {
-    personColumn?: string;
-    timeTrackingColumn?: string;
+    personColumn?: MondayColumn;
+    timeTrackingColumn?: MondayColumn;
   };
 }
 
@@ -24,8 +36,8 @@ export type UseMondayStore = {
   monday: MondayClientSdk;
   itemIds: number[];
   settings?: {
-    personColumnId?: string;
-    timeTrackingColumnId?: string;
+    personColumnId?: MondayColumnStore;
+    timeTrackingColumnId?: MondayColumnStore;
   };
   isLoadingData: boolean;
   boardIds: number[];

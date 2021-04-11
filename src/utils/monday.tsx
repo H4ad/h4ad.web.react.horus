@@ -1,8 +1,11 @@
 import { MondayItem, MondayTimeTracking } from '../models/proxies/monday';
 import { TimeTrackingProxy } from '../models/proxies/time-tracking.proxy';
 
-export function getUserIdsFromItem(item: MondayItem, personColumnId: string): number[] {
-  const columnValue = item.column_values.find(column => column.id === personColumnId);
+export function getUserIdsFromItem(item: MondayItem, personColumnId: string[]): number[] {
+  if (!personColumnId)
+    return [];
+
+  const columnValue = item.column_values.find(column => personColumnId.includes(column.id));
 
   if (!columnValue)
     return [];
@@ -29,8 +32,11 @@ export function getUserIdsFromItem(item: MondayItem, personColumnId: string): nu
 
 export const TIME_TRACKING_MS_TO_HOUR_CONSTANT = 1000 * 60 * 60;
 
-export function getTimeTrackingLogsFromItem(item: MondayItem, timeTrackingColumnId: string): TimeTrackingProxy[] {
-  const columnValue = item.column_values.find(column => column.id === timeTrackingColumnId);
+export function getTimeTrackingLogsFromItem(item: MondayItem, timeTrackingColumnId: string[]): TimeTrackingProxy[] {
+  if (!timeTrackingColumnId)
+    return [];
+
+  const columnValue = item.column_values.find(column => timeTrackingColumnId.includes(column.id));
 
   if (!columnValue)
     return [];

@@ -6,7 +6,7 @@
     "start": "cross-env PORT=4200 REACT_APP_USE_MOCKED_DATA=true craco start",
     "start:prod": "cross-env PORT=4200 craco start",
     "build": "cross-env REACT_APP_USE_MOCKED_DATA=true craco build",
-    "build:prod": "cross-env craco build",
+    "build:prod": "cross-env GENERATE_SOURCEMAP=false craco build",
     "eject": "react-scripts eject",
     "test": "jest",
     "format": "prettier --write --config .prettierrc.yaml .",

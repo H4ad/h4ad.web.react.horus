@@ -5,7 +5,7 @@ import { ReactElement } from 'react';
 import { MondayExportEnum } from '../../../models/proxies/monday';
 import useMondayStore from '../../../store/useMonday';
 import useUserStore from '../../../store/useUser';
-import { exportDataByType } from '../Reports/functions';
+import { exportDataByType } from '../../../utils/export';
 
 import * as S from './styles';
 
