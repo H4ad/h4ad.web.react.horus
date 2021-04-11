@@ -38,7 +38,13 @@ export function createUseMondayStore(): UseStore<UseMondayStore> {
         });
 
         monday.listen<MondayContextEvent>('context', res => {
-          set({ boardIds: res.data.boardIds || [res.data.boardId] });
+          const boardIds = res.data.boardIds || [res.data.boardId];
+          const oldBoardIds = get()?.boardIds || [];
+
+          if (boardIds.every(boardId => oldBoardIds.includes(boardId)) && boardIds.length === oldBoardIds.length)
+            return;
+
+          set({ boardIds });
 
           get().fetchBoardItems();
         });

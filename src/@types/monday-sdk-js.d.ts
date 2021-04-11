@@ -33,8 +33,13 @@ interface OAuthOptions {
 }
 
 interface GetResponse {
-  value: any;
-  version: any;
+  data: {
+    success: true;
+    value: any;
+    version: any;
+  }
+
+  errorMessage: string;
 }
 
 interface SetResponse {

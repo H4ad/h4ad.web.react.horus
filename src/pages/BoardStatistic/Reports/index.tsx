@@ -27,10 +27,10 @@ function BoardStatisticReports(): ReactElement {
   const listByDays = Object.keys(selectedDays).sort((a, b) => a > b ? 1 : -1);
 
   if (!alreadySelectedBoard)
-    return <S.H2>Sorry, you need to select the board first.</S.H2>
+    return <S.HeaderText type="h2" value="Sorry, you need to select the board first." />
 
   if (!alreadySelectedColumns)
-    return <S.H2>Sorry, the columns of Person or Time Tracking is missing, please, select these columns first.</S.H2>
+    return <S.HeaderText type="h2" value="Sorry, the columns of Person or Time Tracking is missing, please, select these columns first."/>
 
   return (<>
     {(isLoadingData) && (
@@ -51,7 +51,7 @@ function BoardStatisticReports(): ReactElement {
                 <S.UserPhoto src={user.photo_thumb_small} alt={user.name}/>
 
                 <S.UserNameContainer>
-                  <S.H2 type="h2" value={user.name}/>
+                  <S.HeaderText type="h2" value={user.name}/>
                 </S.UserNameContainer>
 
                 <S.EditProfile user={user} onClickToExport={type => exportDataByType(type, [user], [calendarData])}/>

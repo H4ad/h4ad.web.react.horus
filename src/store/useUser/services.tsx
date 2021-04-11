@@ -43,10 +43,11 @@ export function fetchUsersByIds(set: SetState<UseUserStore>, get: GetState<UseUs
     if (!hydrated)
       await get().hydrateUsersFromStorage(monday);
 
+    const usersMap = get().usersMap;
+
     return await getUserInfoByIds(monday, userIds)
-      .then(users => {
+      .then(async users => {
         const updatedUsersMap: Record<string, UserProxy> = {};
-        const usersMap = get().usersMap;
 
         for (const user of users) {
           updatedUsersMap[user.id] = {
@@ -60,7 +61,7 @@ export function fetchUsersByIds(set: SetState<UseUserStore>, get: GetState<UseUs
 
         set({ users: updatedUsers, usersMap: updatedUsersMap });
 
-        get().saveUsersOnStorage(monday);
+        await get().saveUsersOnStorage(monday);
 
         return users;
       })
@@ -72,17 +73,12 @@ export function saveUsersOnStorage(set: SetState<UseUserStore>, get: GetState<Us
     const usersMap = get().usersMap;
 
     return monday.storage.instance.setItem(MondayStorageEnum.CACHED_USERS, JSON.stringify(usersMap))
-      .then(result => {
-        if (result.success) {
-          monday.execute('notice', { type: 'success', message: 'User info updated with successful.' }).catch(console.error);
-        } else {
-          monday.execute('notice', { type: 'error', message: 'An error occur, user info cannot be saved.' }).catch(console.error);
-        }
-
-        return result.success;
+      .then(() => {
+        return true;
       })
       .catch(error => {
         console.error(error);
+        monday.execute('notice', { type: 'error', message: 'An error occur, user info cannot be saved.' }).catch(console.error);
 
         return false;
       });
@@ -90,28 +86,30 @@ export function saveUsersOnStorage(set: SetState<UseUserStore>, get: GetState<Us
 }
 
 export function hydrateUsersFromStorage(set: SetState<UseUserStore>, get: GetState<UseUserStore>): UseUserStore['saveUsersOnStorage'] {
-  return function (monday) {
-    return monday.storage.instance.getItem(MondayStorageEnum.CACHED_USERS)
-      .then(result => {
-        if (!result || !result.value)
-          return true;
+  return monday => hydrateUsersFromStorageInternal(monday, set);
+}
 
-        try {
-          const updatedUsersMap: Record<number, UserProxy> = JSON.parse(result.value);
-
-          const updatedUsers = Object.values(updatedUsersMap);
-
-          set({ users: updatedUsers, usersMap: updatedUsersMap, hydrated: true });
-        } catch (e) {
-          monday.execute('notice', { type: 'error', message: 'An error occur, we cannot get user info from cache.' }).catch(console.error);
-        }
-
+async function hydrateUsersFromStorageInternal(monday: MondayClientSdk, set: SetState<UseUserStore>): Promise<boolean> {
+  return monday.storage.instance.getItem(MondayStorageEnum.CACHED_USERS)
+    .then(result => {
+      if (!result?.data?.success)
         return true;
-      })
-      .catch(error => {
-        console.error(error);
 
-        return false;
-      });
-  }
+      try {
+        const updatedUsersMap: Record<number, UserProxy> = JSON.parse(result.data.value);
+
+        const updatedUsers = Object.values(updatedUsersMap);
+
+        set({ users: updatedUsers, usersMap: updatedUsersMap, hydrated: true });
+      } catch (e) {
+        monday.execute('notice', { type: 'error', message: 'An error occur, we cannot get user info from cache.' }).catch(console.error);
+      }
+
+      return true;
+    })
+    .catch(error => {
+      console.error(error);
+
+      return false;
+    });
 }

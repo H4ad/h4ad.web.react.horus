@@ -45,7 +45,7 @@ export interface MondayTimeTracking {
 }
 
 export enum MondayStorageEnum {
-  CACHED_USERS = '@horus_cached_user',
+  CACHED_USERS = 'horus_cached_user',
 }
 
 export enum MondayExportEnum {

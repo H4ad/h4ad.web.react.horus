@@ -88,7 +88,7 @@ export const UserPhoto = styled.img`
 export const AntdPopover = styled(Popover)``;
 
 export const UserNameContainer = styled.div``
-export const H2 = styled(Heading)``
+export const HeaderText = styled(Heading)``
 export const EditProfile = styled(EditUserProfile)``
 
 export const Calendar = styled(UserCalendar)`
