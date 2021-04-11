@@ -171,8 +171,9 @@ export function exportDataByCSV(users: UserProxy[], calendars: CalendarData[]): 
 
   for (let i = 0; i < users.length; i++) {
     const user = users[i];
+    const tasks = calendars[i]?.tasks || [];
 
-    for (const task of calendars[i].tasks) {
+    for (const task of tasks) {
       csv += `${user.id},`;
       csv += `"${user.name}",`;
       csv += `"${user.email}",`;
@@ -206,12 +207,13 @@ export function exportDataByExcel(users: UserProxy[], calendars: CalendarData[])
 
   for (let i = 0; i < users.length; i++) {
     const rows: unknown[][] = [
-      ['Id', 'Name', 'Email', 'Board Id', 'Item Id', 'Item Name', 'Time', 'Formatted Time', 'StartedAt', 'EndedAt']
+      ['Id', 'Name', 'Email', 'Board Id', 'Item Id', 'Item Name', 'Time', 'Formatted Time', 'StartedAt', 'EndedAt'],
     ];
 
     const user = users[i];
+    const tasks = calendars[i]?.tasks || [];
 
-    for (const task of calendars[i].tasks) {
+    for (const task of tasks) {
       rows.push([
         user.id, user.name, user.email, task.boardId, task.itemId, task.itemName, task.time, getFormattedHours(task.time), task.startedAt, task.endedAt,
       ]);
