@@ -4,6 +4,7 @@ import { CalendarData, CalendarDataContributionItem, CalendarDataYears } from '.
 import { BoardStatisticQuery } from '../../../models/proxies/board-statistics.query';
 import { MondayQueryAPI, MondayUser } from '../../../models/proxies/monday';
 import { TaskItemProxy } from '../../../models/proxies/task-item.proxy';
+import { UserProxy } from '../../../models/proxies/user.proxy';
 import { UseMondayStore } from '../../../store/useMonday';
 import { getTimeTrackingLogsFromItem, getUserIdsFromItem } from '../../../utils/monday';
 
@@ -111,4 +112,20 @@ export function onChangeSelectedDays(user: MondayUser, days: Record<string, Cale
   }
 
   set(newSelectedDaysMap);
+}
+
+export function getDefaultUserIfNotLoading(isLoading: boolean, userId: number, user?: UserProxy): UserProxy {
+  if (user)
+    return user;
+
+  if (isLoading && !user)
+    return null;
+
+  return {
+    name: 'Deleted User',
+    id: userId,
+    workTime: 7,
+    email: `${userId}@deleted.com`,
+    photo_thumb_small: 'https://cdn1.monday.com/dapulse_default_photo.png',
+  }
 }

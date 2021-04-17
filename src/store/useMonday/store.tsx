@@ -20,6 +20,8 @@ export function createUseMondayStore(): UseStore<UseMondayStore> {
         });
 
         monday.listen<MondaySettingsEvent>('settings', res => {
+          console.log(res);
+
           const { personColumn, timeTrackingColumn, ...settings } = res.data;
 
           if (!personColumn)
@@ -61,11 +63,9 @@ export function createUseMondayStore(): UseStore<UseMondayStore> {
         });
 
         monday.listen<MondayContextEvent>('context', res => {
-          const boardIds = res.data.boardIds || [res.data.boardId];
-          const oldBoardIds = get()?.boardIds || [];
+          console.log(res);
 
-          if (boardIds.every(boardId => oldBoardIds.includes(boardId)) && boardIds.length === oldBoardIds.length)
-            return;
+          const boardIds = res.data.boardIds || [res.data.boardId];
 
           set({ boardIds });
 

@@ -36,6 +36,7 @@ function EditUserProfile({ user, className, onClickToExport }: UserPopupProfileP
     const updatedUser = form.getFieldsValue();
 
     updateUserById(user.id, {
+      ...user,
       name: updatedUser.name,
       workTime: fromDateToHour(updatedUser.workTime),
     });

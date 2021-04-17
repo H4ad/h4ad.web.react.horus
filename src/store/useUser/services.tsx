@@ -47,7 +47,9 @@ export function fetchUsersByIds(set: SetState<UseUserStore>, get: GetState<UseUs
 
     return await getUserInfoByIds(monday, userIds)
       .then(async users => {
-        const updatedUsersMap: Record<string, UserProxy> = {};
+        const updatedUsersMap: Record<string, UserProxy> = {
+          ...usersMap,
+        };
 
         for (const user of users) {
           updatedUsersMap[user.id] = {
@@ -102,7 +104,7 @@ async function hydrateUsersFromStorageInternal(monday: MondayClientSdk, set: Set
 
         set({ users: updatedUsers, usersMap: updatedUsersMap, hydrated: true });
       } catch (e) {
-        monday.execute('notice', { type: 'error', message: 'An error occur, we cannot get user info from cache.' }).catch(console.error);
+        console.error(e);
       }
 
       return true;

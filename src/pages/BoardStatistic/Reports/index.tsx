@@ -1,13 +1,41 @@
-import { ReactElement } from 'react';
 import Button from 'monday-ui-react-core/dist/Button';
+import { ReactElement, useMemo } from 'react';
 import useMondayStore from '../../../store/useMonday';
 import { getColumnsStoreInList } from '../../../store/useMonday/functions';
 import useUserStore from '../../../store/useUser';
 import { exportDataByType } from '../../../utils/export';
 import { getFormattedHours } from '../../../utils/hours';
 import { getTimeTrackingLogsFromItem } from '../../../utils/monday';
+import { getDefaultUserIfNotLoading } from './functions';
 
 import * as S from './styles';
+
+function CalendarBlock({ isLoading, userId, usersMap, calendarData, onChangeSelectedDay }): ReactElement {
+  const user = useMemo(() => getDefaultUserIfNotLoading(isLoading, userId, usersMap[userId]), [usersMap, userId, isLoading]);
+
+  if (!user)
+    return null;
+
+  return (
+    <S.UserStatistic key={`userStatistic_${user.id}`}>
+      <S.User>
+        <S.UserPhoto src={user.photo_thumb_small} alt={user.name}/>
+
+        <S.UserNameContainer>
+          <S.HeaderText type="h2" value={user.name}/>
+        </S.UserNameContainer>
+
+        <S.EditProfile user={user} onClickToExport={type => exportDataByType(type, [user], [calendarData])}/>
+      </S.User>
+      <S.Calendar key={`userStatisticCalendar_${calendarData.userId}`}
+                  years={calendarData.yearsNumbers}
+                  user={user}
+                  onChangeSelectedDays={onChangeSelectedDay}
+                  data={calendarData}
+                  fullYear={false}/>
+    </S.UserStatistic>
+  );
+}
 
 function BoardStatisticReports(): ReactElement {
   const openItemCard = useMondayStore(state => state.openItemCard);
@@ -29,13 +57,15 @@ function BoardStatisticReports(): ReactElement {
   const listByDays = Object.keys(selectedDays).sort((a, b) => a > b ? 1 : -1);
 
   if (!alreadySelectedBoard)
-    return <S.HeaderText type="h2" value="Sorry, you need to select the board first." />
+    return <S.HeaderText type="h2" value="Sorry, you need to select the board first."/>
 
   if (timeTrackingColumnList.length === 0)
-    return <S.HeaderText type="h2" value="Sorry, the columns of Time Tracking is missing, please, select these columns first."/>
+    return <S.HeaderText type="h2"
+                         value="Sorry, the columns of Time Tracking is missing, please, select these columns first."/>
 
   if (personColumnList.length === 0)
-    return <S.HeaderText type="h2" value="Sorry, the columns of Person is missing, please, select these columns first."/>
+    return <S.HeaderText type="h2"
+                         value="Sorry, the columns of Person is missing, please, select these columns first."/>
 
   return (<>
     {(isLoadingData) && (
@@ -44,32 +74,11 @@ function BoardStatisticReports(): ReactElement {
 
     <S.Section>
       <S.Calendars>
-        {calendars.map(calendarData => {
-          const user = usersMap[calendarData.userId];
-
-          if (!user)
-            return null;
-
-          return (
-            <S.UserStatistic key={`userStatistic_${user.id}`}>
-              <S.User>
-                <S.UserPhoto src={user.photo_thumb_small} alt={user.name}/>
-
-                <S.UserNameContainer>
-                  <S.HeaderText type="h2" value={user.name}/>
-                </S.UserNameContainer>
-
-                <S.EditProfile user={user} onClickToExport={type => exportDataByType(type, [user], [calendarData])}/>
-              </S.User>
-              <S.Calendar key={`userStatisticCalendar_${calendarData.userId}`}
-                          years={calendarData.yearsNumbers}
-                          user={user}
-                          onChangeSelectedDays={onChangeSelectedDay}
-                          data={calendarData}
-                          fullYear={false}/>
-            </S.UserStatistic>
-          );
-        })}
+        {calendars.map(calendarData => <CalendarBlock key={`calendarBlock_${calendarData.userId}`}
+                                                      calendarData={calendarData} usersMap={usersMap}
+                                                      userId={calendarData.userId}
+                                                      onChangeSelectedDay={onChangeSelectedDay}
+                                                      isLoading={isLoadingData}/>)}
       </S.Calendars>
       <S.Items>
         {listByDays.map(day => {
