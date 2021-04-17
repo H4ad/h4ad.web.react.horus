@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import Popover from 'antd/lib/popover';
 import Button from 'monday-ui-react-core/dist/Button';
 import ExpandCollapse from 'monday-ui-react-core/dist/ExpandCollapse';
 import Heading from 'monday-ui-react-core/dist/Heading';
@@ -84,8 +83,6 @@ export const UserPhoto = styled.img`
   margin-right: .5rem;
   margin-left: .5rem;
 `;
-
-export const AntdPopover = styled(Popover)``;
 
 export const UserNameContainer = styled.div``
 export const HeaderText = styled(Heading)``
