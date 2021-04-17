@@ -13,7 +13,7 @@ export type Theme = {
 export const DEFAULT_THEME = {
   background: 'transparent',
   text: '#000',
-  grade4: '#216e39',
+  grade4: '#00FFFF',
   grade3: '#30a14e',
   grade2: '#40c463',
   grade1: '#ff4141',

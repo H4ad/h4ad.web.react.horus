@@ -31,12 +31,14 @@ export type Props = {
   onChangeSelectedDays?: (user: UserProxy, days: Record<string, CalendarDataContributionItem>) => void;
 };
 
+export const blockSize = 12;
+export const blockMargin = 2;
+export const blockClickedSize = 8;
+
 const UserCalendar: React.FC<Props> = ({
                                            className,
                                            data,
                                            user,
-                                           blockMargin = 2,
-                                           blockSize = 12,
                                            children,
                                            color = undefined,
                                            dateFormat = 'MMM d, yyyy',
@@ -191,8 +193,8 @@ const UserCalendar: React.FC<Props> = ({
                 onClick={() => onClickInDay(day)}
                 x="2"
                 y={textHeight + (blockSize + blockMargin) * y + 2}
-                width={(blockSize || 0) * .7}
-                height={(blockSize || 0) * .7}
+                width={blockClickedSize}
+                height={blockClickedSize}
                 fill={selectedDays[day.date] ? '#000' : defaultColor}
                 data-tip={day.info ? getTooltipMessage(day as Required<Block>) : null}
               />

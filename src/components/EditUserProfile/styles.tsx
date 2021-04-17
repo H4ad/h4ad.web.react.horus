@@ -7,7 +7,6 @@ import Button from 'monday-ui-react-core/dist/Button';
 import Heading from 'monday-ui-react-core/dist/Heading';
 import Icon from 'monday-ui-react-core/dist/Icon';
 import Input from 'monday-ui-react-core/dist/TextField';
-import TimePicker from '../Antd/TimePicker';
 import HModal from '../Modal';
 
 export const Modal = styled(HModal)`
@@ -40,6 +39,13 @@ export const Container = styled.div`
 `;
 
 export const Title = styled(Heading)`
+  width: 100%;
+  text-align: center;
+`;
+
+export const Description = styled.p`
+  color: #323338;
+  font-size: 1rem;
   margin-bottom: 2rem;
   
   width: 100%;
@@ -70,14 +76,19 @@ export const SaveButton = styled(Button)`
   width: 100%;
 `;
 
-export const WorkTimeInput = styled(TimePicker)`
-  width: 100%;
-  height: 2.5rem;
+export const NameInput = styled(Input)``
+
+export const WorkTimeContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
   
-  border-radius: 4px;
+  & > div {
+    width: calc(50% - 1rem);
+  }
 `
 
-export const NameInput = styled(Input)``
+export const WorkTimeHourInput = styled(Input)``
+export const WorkTimeMinInput = styled(Input)``
 
 export const Notes = styled.span`
   font-size: .8rem;

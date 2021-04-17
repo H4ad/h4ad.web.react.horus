@@ -1,16 +1,15 @@
 import { useForm } from 'antd/lib/form/Form';
-import MenuTitle from 'monday-ui-react-core/dist/MenuTitle';
-import MenuItem from 'monday-ui-react-core/dist/MenuItem';
-import MenuDivider from 'monday-ui-react-core/dist/MenuDivider';
 import IconEdit from 'monday-ui-react-core/dist/icons/Edit';
+import IconEmbed from 'monday-ui-react-core/dist/icons/Embed';
 import IconNote from 'monday-ui-react-core/dist/icons/Note';
 import IconTable from 'monday-ui-react-core/dist/icons/Table';
-import IconEmbed from 'monday-ui-react-core/dist/icons/Embed';
-import { ReactElement, useMemo, useState } from 'react';
+import MenuDivider from 'monday-ui-react-core/dist/MenuDivider';
+import MenuItem from 'monday-ui-react-core/dist/MenuItem';
+import MenuTitle from 'monday-ui-react-core/dist/MenuTitle';
+import { ReactElement, useState } from 'react';
 import { MondayExportEnum } from '../../models/proxies/monday';
 import { UserProxy } from '../../models/proxies/user.proxy';
 import useUserStore from '../../store/useUser';
-import { fromDateToHour } from './functions';
 
 import * as S from './styles';
 
@@ -21,16 +20,10 @@ export type UserPopupProfileProps = {
 }
 
 function EditUserProfile({ user, className, onClickToExport }: UserPopupProfileProps): ReactElement {
-  const [form] = useForm<{ name: string, workTime: Date }>();
+  const [form] = useForm<{ name: string, workTimeHour: number, workTimeMin: number }>();
 
   const [visible, setVisible] = useState(false);
   const updateUserById = useUserStore(state => state.updateUserById);
-
-  const defaultWorkTimeValue = useMemo(() => {
-    const now = new Date();
-
-    return new Date(now.getFullYear(), now.getMonth(), now.getDate(), ~~user.workTime, Math.round(user.workTime % 1 * 60))
-  }, [user]);
 
   function onClickSave() {
     const updatedUser = form.getFieldsValue();
@@ -38,18 +31,10 @@ function EditUserProfile({ user, className, onClickToExport }: UserPopupProfileP
     updateUserById(user.id, {
       ...user,
       name: updatedUser.name,
-      workTime: fromDateToHour(updatedUser.workTime),
+      workTime: Number(updatedUser.workTimeHour) + (Number(updatedUser.workTimeMin) / 60),
     });
 
     setVisible(false);
-  }
-
-  function onChangeWorkTime(workTime: Date) {
-    form.setFields([
-      { name: 'workTime', value: workTime },
-    ]);
-
-    form.validateFields(['workTime']);
   }
 
   return (<>
@@ -60,9 +45,12 @@ function EditUserProfile({ user, className, onClickToExport }: UserPopupProfileP
           <MenuItem icon={IconEdit} iconType="SVG" title="Edit User" onClick={() => setVisible(true)}/>
           <MenuDivider/>
           <MenuTitle caption="Export Options" captionPosition="top"/>
-          <MenuItem icon={IconNote} iconType="SVG" title="Export hours in CSV" onClick={() => onClickToExport(MondayExportEnum.CSV)}/>
-          <MenuItem icon={IconTable} iconType="SVG" title="Export hours in Excel" onClick={() => onClickToExport(MondayExportEnum.EXCEL)}/>
-          <MenuItem icon={IconEmbed} iconType="SVG" title="Export hours in JSON" onClick={() => onClickToExport(MondayExportEnum.JSON)}/>
+          <MenuItem icon={IconNote} iconType="SVG" title="Export hours in CSV"
+                    onClick={() => onClickToExport(MondayExportEnum.CSV)}/>
+          <MenuItem icon={IconTable} iconType="SVG" title="Export hours in Excel"
+                    onClick={() => onClickToExport(MondayExportEnum.EXCEL)}/>
+          <MenuItem icon={IconEmbed} iconType="SVG" title="Export hours in JSON"
+                    onClick={() => onClickToExport(MondayExportEnum.JSON)}/>
         </S.EditMenu>
       </S.EditMenuButton>
     </S.EditContainer>
@@ -71,6 +59,7 @@ function EditUserProfile({ user, className, onClickToExport }: UserPopupProfileP
              onCancel={() => setVisible(false)}>
       <S.AntdForm form={form} onFinish={onClickSave} hideRequiredMark>
         <S.Title type="h2" value="Edit User"/>
+        <S.Description>Change the user&apos;s name and the user&apos;s working hours to change the colors in the calendar.</S.Description>
 
         <S.AntdFormItem label="Name"
                         name="name"
@@ -85,15 +74,41 @@ function EditUserProfile({ user, className, onClickToExport }: UserPopupProfileP
                        type="text"/>
         </S.AntdFormItem>
 
-        <S.AntdWorkTimeItem
-          label="Work Time"
-          name="workTime"
-          initialValue={defaultWorkTimeValue}>
-          <S.WorkTimeInput placeholder="Select the work time"
-                           onChange={onChangeWorkTime}
-                           format="HH:mm"/>
-        </S.AntdWorkTimeItem>
-        <S.Notes>Min. hours that should be made in a day</S.Notes>
+        <S.WorkTimeContainer>
+          <S.AntdWorkTimeItem
+            label="Work Time (Hour)"
+            name="workTimeHour"
+            initialValue={~~user.workTime}
+            rules={[
+              { required: true, message: 'You need to enter the min. hours for the user to do in one day.' },
+            ]}>
+            <S.WorkTimeHourInput required
+                                 min={0}
+                                 max={23}
+                                 step={1}
+                                 size="medium"
+                                 clearOnIconClick={true}
+                                 placeholder="Select the hour"
+                                 type="number"/>
+          </S.AntdWorkTimeItem>
+
+          <S.AntdWorkTimeItem
+            label="Work Time (Minutes)"
+            name="workTimeMin"
+            initialValue={Math.round((user.workTime % 1) * 60)}
+            rules={[
+              { required: true, message: 'You need to enter the min. minutes for the user to do in one day.' },
+            ]}>
+            <S.WorkTimeMinInput required
+                                min={0}
+                                max={60}
+                                step={1}
+                                size="medium"
+                                clearOnIconClick={true}
+                                placeholder="Select the minutes"
+                                type="number"/>
+          </S.AntdWorkTimeItem>
+        </S.WorkTimeContainer>
 
         <S.SaveButton type="submit">
           Save
