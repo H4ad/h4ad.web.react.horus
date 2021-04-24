@@ -1,3 +1,4 @@
+import { Empty } from 'antd';
 import Button from 'monday-ui-react-core/dist/Button';
 import { ReactElement, useMemo } from 'react';
 import { CalendarDataContributionItem } from '../../../components/UserCalendar/services/contributions';
@@ -156,6 +157,10 @@ function BoardStatisticReports(): ReactElement {
                                                       isLoading={isLoadingData}/>)}
       </S.Calendars>
       <S.Items>
+        {listByDays.length === 0 && (
+          <Empty description="Try selecting a colorful day on the left to see what happens :)"/>
+        )}
+
         {listByDays.map(day => {
           const userIds = Object.keys(selectedDays[day]);
 

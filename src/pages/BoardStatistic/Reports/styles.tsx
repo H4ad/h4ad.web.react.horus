@@ -16,20 +16,33 @@ export const Loading = styled(HLoading)`
 
 export const Section = styled.section`
   display: flex;
+  flex-wrap: wrap;
   max-width: 1280px;
   margin: 0 auto;
 `;
 
 export const Calendars = styled.div`
-  width: 60%;
+  width: 100%;
 
-  padding-right: 1rem;
+  @media(min-width: 768px) {
+    padding-right: 1rem;
+
+    width: 60%;
+  } 
 `;
 
 export const Items = styled.div`
-  width: 40%;
+  width: 100%;
+  
+  padding-left: .5rem;
+  padding-right: .5rem;
 
-  padding-left: 1rem;
+  @media(min-width: 768px) {
+    padding-left: 1rem;
+    padding-right: 0;
+
+    width: 40%;
+  }
 `;
 
 export const ItemGroup = styled(ExpandCollapse)`
