@@ -36,10 +36,12 @@ export interface RequestOptions {
   lastYear: boolean;
 }
 
+export type CalendarDataContributionItems = MondayItem & { boardId: string, task: TaskItemProxy };
+
 export interface CalendarDataContributionItem {
   date: string;
   count: number;
-  items: (MondayItem & { boardId: string, task: TaskItemProxy })[];
+  items: CalendarDataContributionItems[];
 }
 
 export interface CalendarDataYears {

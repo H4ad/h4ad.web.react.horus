@@ -1,15 +1,14 @@
 import { Empty } from 'antd';
 import Button from 'monday-ui-react-core/dist/Button';
 import { ReactElement, useMemo } from 'react';
-import { CalendarDataContributionItem } from '../../../components/UserCalendar/services/contributions';
+import { CalendarDataContributionItem, CalendarDataContributionItems } from '../../../components/UserCalendar/services/contributions';
 import { DEFAULT_THEME } from '../../../components/UserCalendar/utils/constants';
 import { UserProxy } from '../../../models/proxies/user.proxy';
-import useMondayStore, { UseMondayStore } from '../../../store/useMonday';
+import useMondayStore from '../../../store/useMonday';
 import { getColumnsStoreInList } from '../../../store/useMonday/functions';
 import useUserStore from '../../../store/useUser';
 import { exportDataByType } from '../../../utils/export';
 import { getFormattedHoursExtended, getFormattedRange } from '../../../utils/hours';
-import { getTimeTrackingLogsFromItem } from '../../../utils/monday';
 import { getDefaultUserIfNotLoading } from './functions';
 
 import * as S from './styles';
@@ -42,20 +41,29 @@ function CalendarBlock({ isLoading, userId, usersMap, calendarData, onChangeSele
 }
 
 type SelectedDayGroupItemProps = {
-  user: UserProxy,
-  dayInfo: CalendarDataContributionItem,
-  settings: UseMondayStore['settings'],
-  day: string,
+  userIds: number[],
+  usersMap: Record<number, UserProxy>,
+  selectedDay: Record<string, CalendarDataContributionItem>,
 };
 
-function SelectedDayGroupItem({ user, dayInfo, settings, day }: SelectedDayGroupItemProps): ReactElement {
+function SelectedDayGroupItem({ userIds, usersMap, selectedDay }: SelectedDayGroupItemProps): ReactElement {
   const openItemCard = useMondayStore(state => state.openItemCard);
 
   const groupedData = useMemo(() => {
-    const groups: { boardName: string, items: CalendarDataContributionItem['items'] }[] = []
+    type GroupedItem = CalendarDataContributionItems & { user: UserProxy };
+
+    const allItems = userIds.reduce((acc, userId) => [...acc, ...selectedDay[userId].items.map(item =>
+      ({
+        ...item,
+        user: getDefaultUserIfNotLoading(false, userId, usersMap[userId]),
+      }),
+    )], []);
+
+    const groups: { boardName: string, items: GroupedItem[] }[] = [];
+
     let lastGroupName = '';
 
-    const sortedItems = dayInfo.items.sort((a, b) => {
+    const sortedItems = allItems.sort((a, b) => {
       return +new Date(a.task.startedAt) - +new Date(b.task.startedAt)
     });
 
@@ -75,34 +83,24 @@ function SelectedDayGroupItem({ user, dayInfo, settings, day }: SelectedDayGroup
     }
 
     return groups;
-  }, [dayInfo])
+  }, [userIds, usersMap, selectedDay])
 
   return (
     <>
       {groupedData.map(itemGroup => {
-        return (<>
+        return (<div key={Math.random().toString(16)}>
           <S.HeaderText type="h4" value={itemGroup.boardName}/>
 
           {itemGroup.items.map(item => {
-            const timeTrackingColumn = settings.timeTrackingColumnId[item.boardId] || settings.timeTrackingColumnId.default;
-
-            const time = getTimeTrackingLogsFromItem(item, timeTrackingColumn)
-              .reduce((acc, log) => {
-                if (log.startedAt.startsWith(day))
-                  return acc + log.time;
-
-                return acc;
-              }, 0);
-
             return (
-              <S.ItemButtonTooltip key={`itemGroup_${item.id}`} content={item.name}>
+              <S.ItemButtonTooltip key={`itemGroup_${item.id}`} content={item.name} position="left">
                 <S.ItemButton kind={Button.kinds.TERTIARY}
                               onClick={() => openItemCard(+item.id)}>
-                  <S.UserPhoto src={user.photo_thumb_small} alt={user.name}/>
+                  <S.UserPhoto src={item.user.photo_thumb_small} alt={item.user.name}/>
                   <S.ItemButtonText>
                     {getFormattedRange(item.task.startedAt, item.task.endedAt)}
                     <br/>
-                    {getFormattedHoursExtended(time)}
+                    {getFormattedHoursExtended(item.task.time)}
                     <br/>
                     {item.name}
                   </S.ItemButtonText>
@@ -110,7 +108,7 @@ function SelectedDayGroupItem({ user, dayInfo, settings, day }: SelectedDayGroup
               </S.ItemButtonTooltip>
             );
           })}
-        </>)
+        </div>)
       })}
     </>
   );
@@ -126,8 +124,6 @@ function BoardStatisticReports(): ReactElement {
 
   const selectedDays = useMondayStore(state => state.selectedDays);
   const onChangeSelectedDay = useMondayStore(state => state.onChangeSelectedDay);
-
-  const settings = useMondayStore(state => state.settings);
 
   const usersMap = useUserStore(state => state.usersMap);
 
@@ -205,20 +201,14 @@ function BoardStatisticReports(): ReactElement {
         )}
 
         {listByDays.map(day => {
-          const userIds = Object.keys(selectedDays[day]);
+          const userIds = Object.keys(selectedDays[day]).map(Number);
 
           return (
             <S.ItemGroup key={`itemGroup_${day}`}
                          headerComponentRenderer={() => <S.ItemGroupHeader type="h3" value={day}/>}>
-              {userIds.map(userId => {
-                const dayInfo = selectedDays[day][userId];
-
-                return <SelectedDayGroupItem key={`itemGroup_${day}_${userId}_list`}
-                                             user={usersMap[userId]}
-                                             day={day}
-                                             settings={settings}
-                                             dayInfo={dayInfo}/>
-              })}
+              <SelectedDayGroupItem userIds={userIds}
+                                    usersMap={usersMap}
+                                    selectedDay={selectedDays[day]}/>
             </S.ItemGroup>
           )
         })}
