@@ -3,6 +3,1987 @@
     "boards": [
       {
         "id": "866877473",
+        "name": "Ermes",
+        "items": [
+          {
+            "id": "1129325507",
+            "name": "Adicionar nova listagem de arquivos 3d",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17405111,\"kind\":\"person\"}],\"changed_at\":\"2021-03-24T00:11:12.396Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1617919066,\"duration\":8023,\"changed_at\":\"2021-04-08T21:57:36.047Z\",\"additional_value\":[{\"id\":72256484,\"account_id\":7590799,\"project_id\":1129325507,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-03-14T01:58:05Z\",\"ended_at\":\"2021-03-14T02:54:38Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-03-14T01:58:10Z\",\"updated_at\":\"2021-03-14T02:54:44Z\",\"status\":\"active\"},{\"id\":74252817,\"account_id\":7590799,\"project_id\":1129325507,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-03-20T21:37:46Z\",\"ended_at\":\"2021-03-20T22:54:56Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-03-20T21:37:58Z\",\"updated_at\":\"2021-03-20T22:55:08Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "1129325559",
+            "name": "Adicionar modal de cadastro de arquivo 3d",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-03-24T00:11:13.698Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1617919066,\"duration\":8023,\"changed_at\":\"2021-04-08T21:57:36.047Z\",\"additional_value\":[{\"id\":72256484,\"account_id\":7590799,\"project_id\":1129325507,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-03-14T01:58:05Z\",\"ended_at\":\"2021-03-14T02:54:38Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-03-14T01:58:10Z\",\"updated_at\":\"2021-03-14T02:54:44Z\",\"status\":\"active\"},{\"id\":74252817,\"account_id\":7590799,\"project_id\":1129325507,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-03-20T21:37:46Z\",\"ended_at\":\"2021-03-20T22:54:56Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-03-20T21:37:58Z\",\"updated_at\":\"2021-03-20T22:55:08Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "1129325578",
+            "name": "Adicionar modal de atualizar um arquivo 3d",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-03-24T00:11:14.651Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1616544668,\"duration\":7898,\"changed_at\":\"2021-03-24T00:11:06.845Z\",\"additional_value\":[{\"id\":74327443,\"account_id\":7590799,\"project_id\":1129325578,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-03-21T20:36:46Z\",\"ended_at\":\"2021-03-21T22:02:18Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-03-21T20:36:58Z\",\"updated_at\":\"2021-03-21T22:02:30Z\",\"status\":\"active\"},{\"id\":74347109,\"account_id\":7590799,\"project_id\":1129325578,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-03-21T23:22:12Z\",\"ended_at\":\"2021-03-21T23:53:27Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-03-21T23:22:24Z\",\"updated_at\":\"2021-03-21T23:53:39Z\",\"status\":\"active\"},{\"id\":74362291,\"account_id\":7590799,\"project_id\":1129325578,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-03-22T02:13:32Z\",\"ended_at\":\"2021-03-22T02:28:23Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-03-22T02:13:44Z\",\"updated_at\":\"2021-03-22T02:28:34Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "1129336472",
+            "name": "Adicionar modal de remover um arquivo 3d",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-03-24T00:11:15.575Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1616544670,\"duration\":574,\"changed_at\":\"2021-03-24T00:20:44.890Z\",\"additional_value\":[{\"id\":75101446,\"account_id\":7590799,\"project_id\":1129336472,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-03-24T00:11:10Z\",\"ended_at\":\"2021-03-24T00:20:44Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-03-24T00:11:11Z\",\"updated_at\":\"2021-03-24T00:20:45Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "1156383586",
+            "name": "Implementar botão de download de um addressable",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-03-24T00:30:01.269Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1616545247,\"duration\":551,\"changed_at\":\"2021-03-24T00:29:58.748Z\",\"additional_value\":[{\"id\":75102735,\"account_id\":7590799,\"project_id\":1156383586,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-03-24T00:20:47Z\",\"ended_at\":\"2021-03-24T00:29:58Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-03-24T00:20:48Z\",\"updated_at\":\"2021-03-24T00:29:59Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "1156400204",
+            "name": "Corrigir as modais de atualização baseada no novo formato de dados enviado pela API",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-03-24T00:45:01.545Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1616545824,\"duration\":873,\"changed_at\":\"2021-03-24T00:44:57.964Z\",\"additional_value\":[{\"id\":75103941,\"account_id\":7590799,\"project_id\":1156400204,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-03-24T00:30:24Z\",\"ended_at\":\"2021-03-24T00:44:57Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-03-24T00:30:24Z\",\"updated_at\":\"2021-03-24T00:44:58Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "1156402042",
+            "name": "Arrumar a referência dos campos da listagem para o novo formato de dados enviado pela API",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-03-24T01:08:10.683Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1616546703,\"duration\":1385,\"changed_at\":\"2021-03-24T01:08:08.095Z\",\"additional_value\":[{\"id\":75105974,\"account_id\":7590799,\"project_id\":1156402042,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-03-24T00:45:03Z\",\"ended_at\":\"2021-03-24T01:08:08Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-03-24T00:45:03Z\",\"updated_at\":\"2021-03-24T01:08:08Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "1156424647",
+            "name": "Alterar os nomes das etapas de um addressable 3d",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-03-24T01:08:11.996Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1616548095,\"duration\":2762,\"changed_at\":\"2021-03-24T01:54:17.270Z\",\"additional_value\":[{\"id\":75108812,\"account_id\":7590799,\"project_id\":1156424647,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-03-24T01:08:15Z\",\"ended_at\":\"2021-03-24T01:54:17Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-03-24T01:08:16Z\",\"updated_at\":\"2021-03-24T01:54:17Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "1156521049",
+            "name": "Verificar se foi corrigido o problema de atualizar um object 3d de um addressable que já recebeu um object 3d.",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-03-24T02:17:38.059Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1616636033,\"duration\":1325,\"changed_at\":\"2021-03-25T01:55:58.775Z\",\"additional_value\":[{\"id\":75443118,\"account_id\":7590799,\"project_id\":1156521049,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-03-25T01:33:53Z\",\"ended_at\":\"2021-03-25T01:55:58Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-03-25T01:33:53Z\",\"updated_at\":\"2021-03-25T01:55:59Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "1166541466",
+            "name": "Testar as novas correções na API com relação a páginação e update de um objeto",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-03-27T16:05:59.329Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1616859095,\"duration\":2061,\"changed_at\":\"2021-03-27T16:05:56.738Z\",\"additional_value\":[{\"id\":76110130,\"account_id\":7590799,\"project_id\":1166541466,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-03-27T15:31:35Z\",\"ended_at\":\"2021-03-27T16:05:56Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-03-27T15:31:36Z\",\"updated_at\":\"2021-03-27T16:05:57Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "1170203610",
+            "name": "Adicionar modal de confirmação ao enviar para release",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-03-29T17:36:35.620Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1617392499,\"duration\":1808,\"changed_at\":\"2021-04-02T20:11:47.680Z\",\"additional_value\":[{\"id\":78329693,\"account_id\":7590799,\"project_id\":1170203610,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-04-02T19:41:39Z\",\"ended_at\":\"2021-04-02T20:11:47Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-04-02T19:41:40Z\",\"updated_at\":\"2021-04-02T20:11:48Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933877571",
+            "name": "Adaptar o layout da página de Login",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17405111,\"kind\":\"person\"}],\"changed_at\":\"2020-12-29T14:31:23.737Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "935747790",
+            "name": "Adaptar o layout da página change-password e forgot-password",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17405111,\"kind\":\"person\"}],\"changed_at\":\"2020-12-29T17:41:47.237Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "933879467",
+            "name": "Adaptar o layout da modal de seleção de subsidiária",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17405111,\"kind\":\"person\"}],\"changed_at\":\"2020-12-29T16:27:16.101Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "933882712",
+            "name": "Adaptar o layout da barra de navegação",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-23T13:51:23.674Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1611411842,\"duration\":2034,\"changed_at\":\"2021-01-23T14:25:22.933Z\",\"additional_value\":[{\"id\":57967043,\"account_id\":7590799,\"project_id\":933882712,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-23T13:51:24Z\",\"ended_at\":\"2021-01-23T14:23:58Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-23T13:51:24Z\",\"updated_at\":\"2021-01-23T14:23:58Z\",\"status\":\"active\"},{\"id\":57968664,\"account_id\":7590799,\"project_id\":933882712,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-23T14:24:02Z\",\"ended_at\":\"2021-01-23T14:25:22Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-23T14:24:03Z\",\"updated_at\":\"2021-01-23T14:25:23Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "947857420",
+            "name": "Adicionar suporte ao editar um usuário de alteração do status",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17405111,\"kind\":\"person\"}],\"changed_at\":\"2021-02-02T17:08:52.980Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "947885362",
+            "name": "Arrumar invalidação de cache quando atualizar/deletar/adicionar um usuário na página de listar os usuários",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17405111,\"kind\":\"person\"}],\"changed_at\":\"2021-02-02T17:08:56.004Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "933882118",
+            "name": "Adaptar o layout da página de usuários",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-05T18:27:41.567Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1609871263,\"duration\":3743,\"changed_at\":\"2021-01-05T19:30:06.492Z\",\"additional_value\":[{\"id\":53521083,\"account_id\":7590799,\"project_id\":933882118,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-05T18:27:43Z\",\"ended_at\":\"2021-01-05T19:30:06Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-05T18:27:43Z\",\"updated_at\":\"2021-01-05T19:30:06Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933884960",
+            "name": "Adaptar as modais da tela de usuários",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-05T19:53:42.092Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1609876789,\"duration\":2918,\"changed_at\":\"2021-01-05T20:48:27.569Z\",\"additional_value\":[{\"id\":53543385,\"account_id\":7590799,\"project_id\":933884960,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-05T19:59:49Z\",\"ended_at\":\"2021-01-05T20:48:27Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-05T19:59:49Z\",\"updated_at\":\"2021-01-05T20:48:27Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933884484",
+            "name": "Adaptar o layout da página de Files",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-29T18:07:21.923Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1609265242,\"duration\":4361,\"changed_at\":\"2020-12-29T19:20:03.748Z\",\"additional_value\":[{\"id\":52120956,\"account_id\":7590799,\"project_id\":933884484,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-29T18:07:22Z\",\"ended_at\":\"2020-12-29T19:20:03Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-29T18:07:22Z\",\"updated_at\":\"2020-12-29T19:20:04Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933885336",
+            "name": "Adaptar as modais das telas de Files",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-29T20:02:34.392Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1609272155,\"duration\":2326,\"changed_at\":\"2020-12-29T20:41:21.648Z\",\"additional_value\":[{\"id\":52139671,\"account_id\":7590799,\"project_id\":933885336,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-29T20:02:35Z\",\"ended_at\":\"2020-12-29T20:41:21Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-29T20:02:35Z\",\"updated_at\":\"2020-12-29T20:41:22Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933883615",
+            "name": "Adaptar o layout da página de Case Rooms",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-29T16:26:43.862Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1609254023,\"duration\":4988,\"changed_at\":\"2020-12-29T15:17:20.385Z\",\"additional_value\":[{\"id\":52066366,\"account_id\":7590799,\"project_id\":933883615,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-29T13:53:08Z\",\"ended_at\":\"2020-12-29T14:59:19Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-29T13:53:09Z\",\"updated_at\":\"2020-12-29T14:59:19Z\",\"status\":\"active\"},{\"id\":52082502,\"account_id\":7590799,\"project_id\":933883615,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-29T15:00:23Z\",\"ended_at\":\"2020-12-29T15:17:20Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-29T15:00:28Z\",\"updated_at\":\"2020-12-29T15:17:22Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933885141",
+            "name": "Adaptar as modais da tela de Case Rooms",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-29T15:17:31.498Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1609255054,\"duration\":2428,\"changed_at\":\"2020-12-29T15:58:02.289Z\",\"additional_value\":[{\"id\":52086126,\"account_id\":7590799,\"project_id\":933885141,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-29T15:17:34Z\",\"ended_at\":\"2020-12-29T15:58:02Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-29T15:17:34Z\",\"updated_at\":\"2020-12-29T15:58:02Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933886529",
+            "name": "Adaptar layout da tela de Workspace Profile - Editar Subsidiária",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-29T20:50:38.621Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1609275041,\"duration\":3396,\"changed_at\":\"2020-12-29T21:47:17.539Z\",\"additional_value\":[{\"id\":52145357,\"account_id\":7590799,\"project_id\":933886529,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-29T20:50:41Z\",\"ended_at\":\"2020-12-29T21:47:17Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-29T20:50:41Z\",\"updated_at\":\"2020-12-29T21:47:17Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933888017",
+            "name": "Criar tela de logout",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-05T15:22:59.484Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1609860182,\"duration\":3690,\"changed_at\":\"2021-01-05T16:24:32.953Z\",\"additional_value\":[{\"id\":53453366,\"account_id\":7590799,\"project_id\":933888017,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-05T15:23:02Z\",\"ended_at\":\"2021-01-05T16:24:32Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-05T15:23:02Z\",\"updated_at\":\"2021-01-05T16:24:33Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933881390",
+            "name": "Adaptar o layout da página inicial",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-06T23:40:19.285Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1609976416,\"duration\":3138,\"changed_at\":\"2021-01-07T00:32:34.341Z\",\"additional_value\":[{\"id\":53884773,\"account_id\":7590799,\"project_id\":933881390,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-06T23:40:16Z\",\"ended_at\":\"2021-01-07T00:32:34Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-06T23:40:17Z\",\"updated_at\":\"2021-01-07T00:32:34Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "951620629",
+            "name": "Adaptar o layout da página de main para o primary admin",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-07T00:34:58.970Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1609979704,\"duration\":1124,\"changed_at\":\"2021-01-07T00:53:48.687Z\",\"additional_value\":[{\"id\":53890429,\"account_id\":7590799,\"project_id\":951620629,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-07T00:35:04Z\",\"ended_at\":\"2021-01-07T00:53:48Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-07T00:35:04Z\",\"updated_at\":\"2021-01-07T00:53:48Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "951645609",
+            "name": "Adaptar o login para logar automaticamente quando o usuário é um Primary Admin",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-07T00:53:45.190Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1609980833,\"duration\":2118,\"changed_at\":\"2021-01-07T01:29:11.589Z\",\"additional_value\":[{\"id\":53892250,\"account_id\":7590799,\"project_id\":951645609,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-07T00:53:53Z\",\"ended_at\":\"2021-01-07T01:29:11Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-07T00:53:53Z\",\"updated_at\":\"2021-01-07T01:29:11Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933888947",
+            "name": "Criar listagem de Workspaces",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-07T03:14:29.486Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1609985840,\"duration\":2836,\"changed_at\":\"2021-01-07T03:04:36.706Z\",\"additional_value\":[{\"id\":53900039,\"account_id\":7590799,\"project_id\":933888947,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-07T02:17:20Z\",\"ended_at\":\"2021-01-07T03:04:36Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-07T02:17:20Z\",\"updated_at\":\"2021-01-07T03:04:37Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "934159095",
+            "name": "Criar modal para adicionar um Workspace",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-07T03:14:30.424Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "933889905",
+            "name": "Criar modal para edição de um Workspace",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-07T03:14:31.494Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "933890110",
+            "name": "Criar modal para a remoção de um Workspace",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-07T03:14:32.471Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1609988692,\"duration\":510,\"changed_at\":\"2021-01-07T03:13:22.756Z\",\"additional_value\":[{\"id\":53903540,\"account_id\":7590799,\"project_id\":933890110,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-07T03:04:52Z\",\"ended_at\":\"2021-01-07T03:13:22Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-07T03:04:52Z\",\"updated_at\":\"2021-01-07T03:13:23Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933887500",
+            "name": "Adicionar suporte a tela de Profile para editar uma Empresa - Como admin primário",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-08T00:30:33.725Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1610065835,\"duration\":1158,\"changed_at\":\"2021-01-08T00:49:53.579Z\",\"additional_value\":[{\"id\":54167947,\"account_id\":7590799,\"project_id\":933887500,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-08T00:30:35Z\",\"ended_at\":\"2021-01-08T00:49:53Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-08T00:30:36Z\",\"updated_at\":\"2021-01-08T00:49:53Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933891124",
+            "name": "Criar tela para listagem de administradores",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-08T01:55:40.396Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1610067009,\"duration\":3933,\"changed_at\":\"2021-01-08T01:55:42.669Z\",\"additional_value\":[{\"id\":54170556,\"account_id\":7590799,\"project_id\":933891124,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-08T00:50:09Z\",\"ended_at\":\"2021-01-08T01:55:42Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-08T00:50:09Z\",\"updated_at\":\"2021-01-08T01:55:42Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933893259",
+            "name": "Criar modal para adicionar um novo administrador",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-23T14:49:14.757Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1610070984,\"duration\":1171,\"changed_at\":\"2021-01-08T02:15:55.873Z\",\"additional_value\":[{\"id\":54176215,\"account_id\":7590799,\"project_id\":933893259,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-08T01:56:24Z\",\"ended_at\":\"2021-01-08T02:15:55Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-08T01:56:24Z\",\"updated_at\":\"2021-01-08T02:15:56Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933893460",
+            "name": "Criar modal para atualizar um administrador",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-23T14:49:09.011Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1611413566,\"duration\":1114,\"changed_at\":\"2021-01-23T15:11:19.500Z\",\"additional_value\":[{\"id\":57970303,\"account_id\":7590799,\"project_id\":933893460,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-23T14:49:09Z\",\"ended_at\":\"2021-01-23T14:49:10Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-23T14:49:10Z\",\"updated_at\":\"2021-01-23T14:49:10Z\",\"status\":\"active\"},{\"id\":57970402,\"account_id\":7590799,\"project_id\":933893460,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-23T14:52:46Z\",\"ended_at\":\"2021-01-23T15:11:19Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-23T14:52:46Z\",\"updated_at\":\"2021-01-23T15:11:20Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933893649",
+            "name": "Criar modal para remover um administrador",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-23T15:11:23.413Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1611414689,\"duration\":1512,\"changed_at\":\"2021-01-23T15:36:41.361Z\",\"additional_value\":[{\"id\":57971446,\"account_id\":7590799,\"project_id\":933893649,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-23T15:11:29Z\",\"ended_at\":\"2021-01-23T15:36:41Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-23T15:11:29Z\",\"updated_at\":\"2021-01-23T15:36:41Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933894256",
+            "name": "Adaptar tela de início para renderizar menos items quando logado como administrador primário",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-23T15:36:50.270Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "947437395",
+            "name": "Adicionar o deploy para AWS no ambiente de desenvolvimento",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-23T15:36:59.685Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1610064858,\"duration\":969,\"changed_at\":\"2021-01-08T00:30:27.600Z\",\"additional_value\":[{\"id\":54166759,\"account_id\":7590799,\"project_id\":947437395,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-08T00:14:18Z\",\"ended_at\":\"2021-01-08T00:30:27Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-08T00:14:18Z\",\"updated_at\":\"2021-01-08T00:30:27Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "947583335",
+            "name": "Adicionar suporte a listar a coluna \"date\" na listagem de usuários",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-16T01:48:25.396Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "947593583",
+            "name": "Implementar rota de remoção de logo de uma subsdiária.",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-16T01:16:39.537Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1610759797,\"duration\":2097,\"changed_at\":\"2021-01-16T01:51:34.043Z\",\"additional_value\":[{\"id\":56172100,\"account_id\":7590799,\"project_id\":947593583,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-16T01:16:37Z\",\"ended_at\":\"2021-01-16T01:51:34Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-16T01:16:37Z\",\"updated_at\":\"2021-01-16T01:51:34Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "947595819",
+            "name": "Implementar rota de remoção de logo de uma companhia.",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-23T15:37:36.565Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "947598006",
+            "name": "Implementar rota de upload de logo de uma companhia.",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-23T13:17:28.820Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1611407850,\"duration\":2020,\"changed_at\":\"2021-01-23T13:51:10.193Z\",\"additional_value\":[{\"id\":57965302,\"account_id\":7590799,\"project_id\":947598006,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-23T13:17:30Z\",\"ended_at\":\"2021-01-23T13:51:10Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-23T13:17:30Z\",\"updated_at\":\"2021-01-23T13:51:10Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "947598875",
+            "name": "Esperar a adição dos campos de permissão do usuário e companhia na rota '/users/logged'.",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-16T01:59:14.643Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "947580635",
+            "name": "Verificar se a rota de usuários voltou a funcionar ao filtrar por usuários pendentes",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-16T01:53:24.534Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1610762006,\"duration\":999,\"changed_at\":\"2021-01-16T02:10:05.818Z\",\"additional_value\":[{\"id\":56173932,\"account_id\":7590799,\"project_id\":947580635,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-16T01:53:26Z\",\"ended_at\":\"2021-01-16T02:10:05Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-16T01:53:26Z\",\"updated_at\":\"2021-01-16T02:10:06Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "936015498",
+            "name": "Implementar a listagem dos arquivos sendo filtrados por Share With",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-30T02:25:11.025Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1611973508,\"duration\":749,\"changed_at\":\"2021-01-30T02:37:37.252Z\",\"additional_value\":[{\"id\":59813337,\"account_id\":7590799,\"project_id\":936015498,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-30T02:25:08Z\",\"ended_at\":\"2021-01-30T02:37:37Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-30T02:25:09Z\",\"updated_at\":\"2021-01-30T02:37:37Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "947588894",
+            "name": "Implementar os filtros da listagem de usuários de uma companhia",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-30T01:17:13.012Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1611970274,\"duration\":1093,\"changed_at\":\"2021-01-30T01:35:32.838Z\",\"additional_value\":[{\"id\":59808809,\"account_id\":7590799,\"project_id\":947588894,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-30T01:17:10Z\",\"ended_at\":\"2021-01-30T01:31:05Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-30T01:17:10Z\",\"updated_at\":\"2021-01-30T01:31:05Z\",\"status\":\"active\"},{\"id\":59810383,\"account_id\":7590799,\"project_id\":947588894,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-30T01:31:14Z\",\"ended_at\":\"2021-01-30T01:35:32Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-30T01:31:14Z\",\"updated_at\":\"2021-01-30T01:35:33Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "947618650",
+            "name": "Verificar se foi corrigido a listagem de usuários filtrando por status",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-30T02:24:30.737Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "955010351",
+            "name": "A rota de listagem de administradores não está funcionando",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-16T02:02:01.969Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "955024450",
+            "name": "Não há rota para atualizar um usuário administrador",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-23T15:37:12.196Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "955024539",
+            "name": "Não há rota para remover um usuário administrador",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-23T15:37:13.284Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "955036268",
+            "name": "Ao criar um usuário admin com um e-mail que já existe, é retornado erro 500",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-23T19:14:33.920Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1611428146,\"duration\":972,\"changed_at\":\"2021-01-23T19:11:58.334Z\",\"additional_value\":[{\"id\":57985626,\"account_id\":7590799,\"project_id\":955036268,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-23T18:55:46Z\",\"ended_at\":\"2021-01-23T19:11:58Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-23T18:55:47Z\",\"updated_at\":\"2021-01-23T19:11:58Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "1011123262",
+            "name": "Adicionar aprovação de usuários admins pendentes",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-30T01:35:56.176Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1611970559,\"duration\":2850,\"changed_at\":\"2021-01-30T02:23:29.591Z\",\"additional_value\":[{\"id\":59810606,\"account_id\":7590799,\"project_id\":1011123262,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-01-30T01:35:59Z\",\"ended_at\":\"2021-01-30T02:23:29Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-01-30T01:35:59Z\",\"updated_at\":\"2021-01-30T02:23:30Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "947602683",
+            "name": "É necessário rotas para exibir a sumarização de users, admins, files, rooms e workspaces",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-02-02T01:39:25.607Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1612305101,\"duration\":2284,\"changed_at\":\"2021-02-02T22:31:14.275Z\",\"additional_value\":[{\"id\":60606523,\"account_id\":7590799,\"project_id\":947602683,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-02-02T01:26:56Z\",\"ended_at\":\"2021-02-02T02:05:00Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":true,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-02-02T01:26:56Z\",\"updated_at\":\"2021-02-02T22:31:41Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "1011148150",
+            "name": "É necessário ter a listagem de usuários por tipo: clients, my team, em conjunto com o filtro de status",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-01-30T02:25:00.136Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1612225656,\"duration\":3556,\"changed_at\":\"2021-02-02T01:26:52.681Z\",\"additional_value\":[{\"id\":60598390,\"account_id\":7590799,\"project_id\":1011148150,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-02-02T00:27:36Z\",\"ended_at\":\"2021-02-02T01:26:52Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-02-02T00:27:36Z\",\"updated_at\":\"2021-02-02T01:26:53Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "1016955306",
+            "name": "Alterar as permissões de um usuário criado pelo admin normal",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2021-02-02T00:19:34.984Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1612225177,\"duration\":443,\"changed_at\":\"2021-02-02T00:27:00.122Z\",\"additional_value\":[{\"id\":60596799,\"account_id\":7590799,\"project_id\":1016955306,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2021-02-02T00:19:37Z\",\"ended_at\":\"2021-02-02T00:27:00Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2021-02-02T00:19:37Z\",\"updated_at\":\"2021-02-02T00:27:00Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "869605370",
+            "name": "Layout do dashboard / Company / Criar estrutura inicial com inputs simples",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-27T21:21:17.952Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1606660580,\"duration\":2189,\"changed_at\":\"2020-11-29T15:12:49.625Z\",\"additional_value\":[{\"id\":46484147,\"account_id\":7590799,\"project_id\":869605370,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-11-29T14:36:20Z\",\"ended_at\":\"2020-11-29T15:12:49Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-11-29T14:36:20Z\",\"updated_at\":\"2020-11-29T15:12:50Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "869605946",
+            "name": "Layout do dashboard / Company / Criar componente de seleção de cor",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-27T21:21:17.952Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"startDate\":1607272099,\"duration\":13980,\"running\":\"false\",\"additional_value\":[{\"id\":48112745,\"account_id\":7590799,\"project_id\":869605946,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-05T17:18:00Z\",\"ended_at\":\"2020-12-05T21:11:00Z\",\"manually_entered_start_time\":true,\"manually_entered_end_time\":true,\"manually_entered_start_date\":true,\"manually_entered_end_date\":true,\"created_at\":\"2020-12-06T16:28:19Z\",\"updated_at\":\"2020-12-06T16:28:19Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "869606739",
+            "name": "Layout do dashboard / Company / Criar componente do logo da empresa",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-27T21:21:17.952Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "869607595",
+            "name": "Página do dashboard / Company / Implementar a alteração na API ao alterar a cor dos componentes",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-27T21:21:17.952Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "869607752",
+            "name": "Página do dashboard / Company / Implementar alteração do logo",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-27T21:21:17.952Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1609012541,\"duration\":4078,\"changed_at\":\"2020-12-26T21:03:39.106Z\",\"additional_value\":[{\"id\":51632902,\"account_id\":7590799,\"project_id\":869607752,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-26T19:55:41Z\",\"ended_at\":\"2020-12-26T21:03:39Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-26T19:55:41Z\",\"updated_at\":\"2020-12-26T21:03:39Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "869607953",
+            "name": "Página do dashboard / Company / Implementar a remoção do logo",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-27T21:21:17.952Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "923445967",
+            "name": "Atualização das informações de uma empresa não está funcionando, retorna erro 500",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-27T21:21:17.952Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1608647612,\"duration\":2446,\"changed_at\":\"2020-12-22T15:14:18.511Z\",\"additional_value\":[{\"id\":51200890,\"account_id\":7590799,\"project_id\":923445967,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-22T14:33:32Z\",\"ended_at\":\"2020-12-22T15:14:18Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-22T14:33:32Z\",\"updated_at\":\"2020-12-22T15:14:18Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "923446042",
+            "name": "Não há rota para subir o logo ao atualizar as informações de uma empresa",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-27T21:21:17.952Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "932044830",
+            "name": "A rota de upload de logo não está funcionando",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-27T21:21:17.952Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "932687510",
+            "name": "Não há página/texto para exibir quando o usuário clica em \"Privacy Policy\"",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-27T22:28:05.120Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "933528218",
+            "name": "Incoerencia entre a API e o layout",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-28T15:42:52.921Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "869592462",
+            "name": "Layout para os filtros - All FIles, 3D Files, Media Files, etc...",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1607779076,\"duration\":4446,\"changed_at\":\"2020-12-12T14:32:02.830Z\",\"additional_value\":[{\"id\":49394937,\"account_id\":7590799,\"project_id\":869592462,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-12T13:17:56Z\",\"ended_at\":\"2020-12-12T14:32:02Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-12T13:17:56Z\",\"updated_at\":\"2020-12-12T14:32:03Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "869594869",
+            "name": "Buscar os dados para a sumarização",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "869597075",
+            "name": "Página do dashboard / Upload / Implementar filtro de pesquisa",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "869596199",
+            "name": "Layout do dashboard / Upload / Tabela para os arquivos",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1607797790,\"duration\":9379,\"changed_at\":\"2020-12-12T18:29:59.777Z\",\"additional_value\":[{\"id\":49396942,\"account_id\":7590799,\"project_id\":869596199,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-12T14:32:09Z\",\"ended_at\":\"2020-12-12T14:58:52Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-12T14:32:09Z\",\"updated_at\":\"2020-12-12T14:58:52Z\",\"status\":\"active\"},{\"id\":49398138,\"account_id\":7590799,\"project_id\":869596199,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-12T15:09:35Z\",\"ended_at\":\"2020-12-12T15:19:35Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-12T15:09:36Z\",\"updated_at\":\"2020-12-12T15:19:36Z\",\"status\":\"active\"},{\"id\":49400448,\"account_id\":7590799,\"project_id\":869596199,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-12T16:11:56Z\",\"ended_at\":\"2020-12-12T18:11:23Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-12T16:11:57Z\",\"updated_at\":\"2020-12-12T18:11:23Z\",\"status\":\"active\"},{\"id\":49406691,\"account_id\":7590799,\"project_id\":869596199,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-12T18:29:50Z\",\"ended_at\":\"2020-12-12T18:29:59Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-12T18:29:50Z\",\"updated_at\":\"2020-12-12T18:30:00Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "869598142",
+            "name": "Layout do dashboard / Upload  - Modal para realizar upload de um novo arquivo",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1607797806,\"duration\":7426,\"changed_at\":\"2020-12-12T20:33:52.624Z\",\"additional_value\":[{\"id\":49406695,\"account_id\":7590799,\"project_id\":869598142,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-12T18:30:06Z\",\"ended_at\":\"2020-12-12T20:33:52Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-12T18:30:06Z\",\"updated_at\":\"2020-12-12T20:33:52Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "869601842",
+            "name": "Página do dashboard / Upload - Implementar modal para realizar upload de um novo arquivo",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "869600216",
+            "name": "Layout do dashboard / Upload - Modal para visualizar as informações do arquivo",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1607877267,\"duration\":3074,\"changed_at\":\"2020-12-13T17:09:26.100Z\",\"additional_value\":[{\"id\":49462886,\"account_id\":7590799,\"project_id\":869600216,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-13T15:59:48Z\",\"ended_at\":\"2020-12-13T16:16:03Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-13T15:59:48Z\",\"updated_at\":\"2020-12-13T16:16:03Z\",\"status\":\"active\"},{\"id\":49464307,\"account_id\":7590799,\"project_id\":869600216,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-13T16:34:27Z\",\"ended_at\":\"2020-12-13T17:09:26Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-13T16:34:27Z\",\"updated_at\":\"2020-12-13T17:09:26Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "869600996",
+            "name": "Layout do dashboard / Upload - Modal para atualizar as informações do arquivo",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1607879376,\"duration\":1477,\"changed_at\":\"2020-12-13T17:34:13.568Z\",\"additional_value\":[{\"id\":49466716,\"account_id\":7590799,\"project_id\":869600996,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-13T17:09:36Z\",\"ended_at\":\"2020-12-13T17:34:13Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-13T17:09:36Z\",\"updated_at\":\"2020-12-13T17:34:13Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "869602148",
+            "name": "Página do dashboard / Upload - Implementar modal para atualizar as informações do arquivo",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1608388818,\"duration\":5937,\"changed_at\":\"2020-12-19T16:19:15.302Z\",\"additional_value\":[{\"id\":50751740,\"account_id\":7590799,\"project_id\":869602148,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-19T14:40:18Z\",\"ended_at\":\"2020-12-19T16:19:15Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-19T14:40:18Z\",\"updated_at\":\"2020-12-19T16:19:15Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "869603333",
+            "name": "Layout do dashboard / Upload - Modal para excluir um arquivo",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1607880856,\"duration\":2589,\"changed_at\":\"2020-12-13T18:17:25.303Z\",\"additional_value\":[{\"id\":49468010,\"account_id\":7590799,\"project_id\":869603333,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-13T17:34:16Z\",\"ended_at\":\"2020-12-13T18:17:25Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-13T17:34:16Z\",\"updated_at\":\"2020-12-13T18:17:25Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "869603510",
+            "name": "Página do dahsboard / Upload - Implementar modal para excluir um arquivo",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1608394761,\"duration\":895,\"changed_at\":\"2020-12-19T16:34:16.214Z\",\"additional_value\":[{\"id\":50756005,\"account_id\":7590799,\"project_id\":869603510,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-19T16:19:21Z\",\"ended_at\":\"2020-12-19T16:34:16Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-19T16:19:21Z\",\"updated_at\":\"2020-12-19T16:34:16Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "923446272",
+            "name": "Listar todos os arquivos não está funcionando, retorna erro 500",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1608650446,\"duration\":3786,\"changed_at\":\"2020-12-22T16:23:52.459Z\",\"additional_value\":[{\"id\":51211453,\"account_id\":7590799,\"project_id\":923446272,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-22T15:20:46Z\",\"ended_at\":\"2020-12-22T16:23:52Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-22T15:20:47Z\",\"updated_at\":\"2020-12-22T16:23:52Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "923446360",
+            "name": "O filtro de arquivos só aceita 1 tipo de arquivo por vez, o que é incompatível com o layout. Ex: Medias",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "923446585",
+            "name": "A listagem de arquivos só está retornando o nome e o URL, deveria estar retornando muito mais informações",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "923384361",
+            "name": "Reunião de alinhamento dos itens blockados",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-21T14:57:07.573Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1608557930,\"duration\":4698,\"changed_at\":\"2020-12-21T14:57:08.757Z\",\"additional_value\":[{\"id\":50957016,\"account_id\":7590799,\"project_id\":923384361,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-21T13:38:50Z\",\"ended_at\":\"2020-12-21T14:57:08Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-21T13:38:50Z\",\"updated_at\":\"2020-12-21T14:57:09Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "923447615",
+            "name": "Ao atualizar um arquivo, ele pede o ID do arquivo, só que essa informação não é enviada pela API ao listar os arquivos",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "923449245",
+            "name": "Não há como pesquisar um nome de um arquivo, por isso, eu por hora removi o campo de pesquisa da página de arquivos",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "923452972",
+            "name": "As rotas da listagem de arquivos ainda pedem a identificação de um usuário",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "927899368",
+            "name": "É necessário uma rota na API para realizar o download dos arquivos",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:40:42.898Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1608995102,\"duration\":3480,\"changed_at\":\"2020-12-26T15:13:48.987Z\",\"additional_value\":[{\"id\":51277354,\"account_id\":7590799,\"project_id\":927899368,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-22T20:14:19Z\",\"ended_at\":\"2020-12-22T21:03:33Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-22T20:14:20Z\",\"updated_at\":\"2020-12-22T21:03:34Z\",\"status\":\"active\"},{\"id\":51623525,\"account_id\":7590799,\"project_id\":927899368,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-26T15:05:02Z\",\"ended_at\":\"2020-12-26T15:13:48Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-26T15:05:03Z\",\"updated_at\":\"2020-12-26T15:13:49Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "931865857",
+            "name": "Adicionar suporte a busca do ID do usuário ao logar para utilizar nas rotas de Files",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-26T15:15:44.825Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1609008201,\"duration\":11030,\"changed_at\":\"2020-12-26T19:31:03.386Z\",\"additional_value\":[{\"id\":51623842,\"account_id\":7590799,\"project_id\":931865857,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-26T15:15:55Z\",\"ended_at\":\"2020-12-26T17:32:03Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-26T15:15:55Z\",\"updated_at\":\"2020-12-26T17:32:04Z\",\"status\":\"active\"},{\"id\":51630941,\"account_id\":7590799,\"project_id\":931865857,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-12-26T18:43:21Z\",\"ended_at\":\"2020-12-26T19:31:03Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-12-26T18:43:21Z\",\"updated_at\":\"2020-12-26T19:31:03Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "933953022",
+            "name": "Habilitar o campo de nome para edição",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-28T18:29:43.671Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866943404",
+            "name": "Layout do dashboard / Usuários / Clientes - Criar Tabela",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-20T20:48:34.957Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1606343487,\"duration\":2078,\"changed_at\":\"2020-11-25T23:06:05.804Z\",\"additional_value\":[{\"id\":46065731,\"account_id\":7590799,\"project_id\":866943404,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-11-25T22:31:27Z\",\"ended_at\":\"2020-11-25T23:06:05Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-11-25T22:31:28Z\",\"updated_at\":\"2020-11-25T23:06:07Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "868814815",
+            "name": "Layout para os filtros - All Rooms, Open, etc...",
+            "column_values": [
+              {
+                "id": "person",
+                "value": null
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "868816215",
+            "name": "Buscar os dados para a sumarização",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-20T20:57:10.262Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "868819163",
+            "name": "Layout do dashboard / All Rooms - Criar tabela",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-20T20:57:08.839Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1606349360,\"duration\":2230,\"changed_at\":\"2020-11-26T00:46:30.440Z\",\"additional_value\":[{\"id\":46074398,\"account_id\":7590799,\"project_id\":868819163,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-11-26T00:09:20Z\",\"ended_at\":\"2020-11-26T00:46:30Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-11-26T00:09:21Z\",\"updated_at\":\"2020-11-26T00:46:31Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "868821623",
+            "name": "Layout do dashboard / Open - Criar tabela",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-20T20:57:07.932Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "868833585",
+            "name": "Página do dashboard / Open - Implementar listagem de tabela",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-20T21:00:57.332Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "868821781",
+            "name": "Layout do dashboard / Closed - Criar tabela",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-20T20:57:06.823Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "868833712",
+            "name": "Página do dashboard / Closed - Implementar listagem de tabela",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-20T21:00:58.081Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "868821971",
+            "name": "Layout do dashboard / Archived/Deleted - Criar tabela",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-20T20:57:04.794Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "868833834",
+            "name": "Página do dashboard / Archived - Implementar listagem de tabela",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-20T21:00:58.842Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "868825385",
+            "name": "Layout do dashboard / All Rooms, Open, etc... - Modal para reabrir uma Room",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-20T20:57:03.777Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1606570454,\"duration\":9252,\"changed_at\":\"2020-11-28T15:13:15.035Z\",\"additional_value\":[{\"id\":46076963,\"account_id\":7590799,\"project_id\":868825385,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-11-26T00:46:53Z\",\"ended_at\":\"2020-11-26T01:42:04Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-11-26T00:46:53Z\",\"updated_at\":\"2020-11-26T01:42:04Z\",\"status\":\"active\"},{\"id\":46403953,\"account_id\":7590799,\"project_id\":868825385,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-11-28T13:34:14Z\",\"ended_at\":\"2020-11-28T15:13:15Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-11-28T13:34:15Z\",\"updated_at\":\"2020-11-28T15:13:15Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "881585859",
+            "name": "Layout do dashboard / All Rooms, Open, etc... - Modal para remover uma Room",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-28T15:13:39.317Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1606576482,\"duration\":1762,\"changed_at\":\"2020-11-28T15:44:04.667Z\",\"additional_value\":[{\"id\":46407782,\"account_id\":7590799,\"project_id\":881585859,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-11-28T15:14:42Z\",\"ended_at\":\"2020-11-28T15:44:04Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-11-28T15:14:42Z\",\"updated_at\":\"2020-11-28T15:44:05Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "868825692",
+            "name": "Layout do dashboard / All Rooms, Open, etc... - Modal para editar uma Room",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-20T20:57:05.756Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1606601121,\"duration\":986,\"changed_at\":\"2020-11-28T22:19:15.046Z\",\"additional_value\":[{\"id\":46411094,\"account_id\":7590799,\"project_id\":868825692,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-11-28T16:18:20Z\",\"ended_at\":\"2020-11-28T16:20:52Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-11-28T16:18:21Z\",\"updated_at\":\"2020-11-28T16:20:53Z\",\"status\":\"active\"},{\"id\":46428350,\"account_id\":7590799,\"project_id\":868825692,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-11-28T22:05:21Z\",\"ended_at\":\"2020-11-28T22:19:15Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-11-28T22:05:21Z\",\"updated_at\":\"2020-11-28T22:19:15Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "881772797",
+            "name": "Layout do dashboard / All Rooms, Open, etc... - Modal para fechar uma Room",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-28T22:19:43.448Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1606616673,\"duration\":1916,\"changed_at\":\"2020-11-29T02:33:54.143Z\",\"additional_value\":[{\"id\":46428767,\"account_id\":7590799,\"project_id\":881772797,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-11-28T22:21:16Z\",\"ended_at\":\"2020-11-28T22:43:51Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-11-28T22:21:16Z\",\"updated_at\":\"2020-11-28T22:43:52Z\",\"status\":\"active\"},{\"id\":46436523,\"account_id\":7590799,\"project_id\":881772797,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-11-29T02:24:33Z\",\"ended_at\":\"2020-11-29T02:33:54Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-11-29T02:24:34Z\",\"updated_at\":\"2020-11-29T02:33:54Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "877932116",
+            "name": "Adaptar o login anterior para a nova API",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-25T23:12:05.018Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1606345932,\"duration\":3403,\"changed_at\":\"2020-11-26T00:08:55.612Z\",\"additional_value\":[{\"id\":46069442,\"account_id\":7590799,\"project_id\":877932116,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-11-25T23:12:12Z\",\"ended_at\":\"2020-11-26T00:08:55Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-11-25T23:12:13Z\",\"updated_at\":\"2020-11-26T00:08:56Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "868832640",
+            "name": "Página do dashboard / All Rooms, Open, etc... - Implementar Modais",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-20T21:00:11.331Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1606617264,\"duration\":4207,\"changed_at\":\"2020-11-29T03:44:31.357Z\",\"additional_value\":[{\"id\":46436713,\"account_id\":7590799,\"project_id\":868832640,\"column_id\":\"time_tracking\",\"started_user_id\":17277242,\"ended_user_id\":17277242,\"started_at\":\"2020-11-29T02:34:24Z\",\"ended_at\":\"2020-11-29T03:44:31Z\",\"manually_entered_start_time\":false,\"manually_entered_end_time\":false,\"manually_entered_start_date\":false,\"manually_entered_end_date\":false,\"created_at\":\"2020-11-29T02:34:25Z\",\"updated_at\":\"2020-11-29T03:44:32Z\",\"status\":\"active\"}]}"
+              }
+            ]
+          },
+          {
+            "id": "868834855",
+            "name": "Página do dashboard / All Rooms - Implementar listagem de tabela",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-20T21:01:11.581Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": "{\"running\":\"false\",\"startDate\":1605906390,\"duration\":0,\"changed_at\":\"2020-11-20T21:06:23.995Z\"}"
+              }
+            ]
+          },
+          {
+            "id": "881876073",
+            "name": "A resolução ao deletar/arquivar uma Case Room não é salva",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-29T03:45:11.053Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "881876258",
+            "name": "Descobrir como filtrar os dados por algum texto de pesquisa",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-11-29T03:45:50.641Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "925344608",
+            "name": "O filtro pelo campo \"name\" de Case Rooms não está funcionando ao filtrar pelo status",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:39:56.162Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "923384600",
+            "name": "Não está sendo enviado o nome dos usuários \"host\" e \"guest\"",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[{\"id\":17277242,\"kind\":\"person\"}],\"changed_at\":\"2020-12-22T16:39:56.162Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866895848",
+            "name": "Layout do dashboard - Menu",
+            "column_values": [
+              {
+                "id": "person",
+                "value": null
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866916312",
+            "name": "Layout do dashboard / Conteúdo Inicial",
+            "column_values": [
+              {
+                "id": "person",
+                "value": null
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866927886",
+            "name": "Layout do dashboard / Conteúdo Inicial / Deixar mais parecido o gráfico com o Design",
+            "column_values": [
+              {
+                "id": "person",
+                "value": null
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866937903",
+            "name": "Layout do dashboard / Conteúdo Inicial / Regiões",
+            "column_values": [
+              {
+                "id": "person",
+                "value": null
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866926846",
+            "name": "Implementar busca dos dados das atividades",
+            "column_values": [
+              {
+                "id": "person",
+                "value": null
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866932787",
+            "name": "Layout da página de \"Upgrade Plan\"",
+            "column_values": [
+              {
+                "id": "person",
+                "value": null
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866941786",
+            "name": "Layout do dashboard / Usuários / Todos os usuários",
+            "column_values": [
+              {
+                "id": "person",
+                "value": null
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866943548",
+            "name": "Layout do dashboard / Usuários / Meu time - Criar Tabela",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[],\"changed_at\":\"2020-11-20T20:48:35.816Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866943574",
+            "name": "Layout do dashboard / Usuários / Pendente - Criar Tabela",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[],\"changed_at\":\"2020-11-20T20:48:37.260Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866945941",
+            "name": "Layout do dashboard / Usuários - Contagem de usuários em cada estado",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[]}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866948473",
+            "name": "Layout do dsahboard / Usuários - Regiões",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[]}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866950154",
+            "name": "Layout do dashboard / Usuários / Todos os usuários - CRUD",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[]}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866951376",
+            "name": "Página do dashboard / Usuários / Clientes - CRUD",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[],\"changed_at\":\"2020-11-20T20:48:39.210Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866951009",
+            "name": "Página do dashboard / Usuários / Meu time - CRUD",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[],\"changed_at\":\"2020-11-20T20:48:41.527Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866951099",
+            "name": "Página do dashboard / Usuários / Pendente - CRUD",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[],\"changed_at\":\"2020-11-20T20:48:40.374Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "867702584",
+            "name": "Página do dashboard / Usuários / Caixa de Pesquisa",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[]}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "868770509",
+            "name": "Layout do dashboard / Usuários / Modal de Adicionar Usuário",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[],\"changed_at\":\"2020-11-20T20:48:43.672Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "868836982",
+            "name": "Dúvida, como deverá ser lidada a páginação?",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[],\"changed_at\":\"2020-11-20T21:02:03.441Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "872740404",
+            "name": "Definir quais rotas serão utilizadas nessa sprint",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[],\"changed_at\":\"2020-11-23T23:01:00.464Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866877479",
+            "name": "Layout da página de login",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[]}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866920708",
+            "name": "Implementação de autenticação na aplicação",
+            "column_values": [
+              {
+                "id": "person",
+                "value": null
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866877482",
+            "name": "Layout da página de recuperar a senha - Etapa 1",
+            "column_values": [
+              {
+                "id": "person",
+                "value": null
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866877484",
+            "name": "Layout da página de recuperar a senha - Etapa 2",
+            "column_values": [
+              {
+                "id": "person",
+                "value": null
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866921196",
+            "name": "Implementar página de recuperar a senha",
+            "column_values": [
+              {
+                "id": "person",
+                "value": null
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866894887",
+            "name": "Layout da página de alterar senha - Etapa 1",
+            "column_values": [
+              {
+                "id": "person",
+                "value": null
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866895342",
+            "name": "Layout da página de alterar senha - Etapa 2",
+            "column_values": [
+              {
+                "id": "person",
+                "value": null
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "866921646",
+            "name": "Implementar página de alterar senha",
+            "column_values": [
+              {
+                "id": "person",
+                "value": null
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "867784777",
+            "name": "Esperar o desenvolvimento da sumarização",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[]}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "867870444",
+            "name": "Pontos sobre a troca de subsidiaria",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[]}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "872681272",
+            "name": "Layout do dashboard / Upload / Preview de arquivos",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[]}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "867703701",
+            "name": "Layout do dashboard / Usuários / Modal de Import",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[],\"changed_at\":\"2020-11-20T20:48:42.479Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          },
+          {
+            "id": "868787175",
+            "name": "Página do dashboard / Usuários / Botão de export",
+            "column_values": [
+              {
+                "id": "person",
+                "value": "{\"personsAndTeams\":[],\"changed_at\":\"2020-11-20T20:48:44.513Z\"}"
+              },
+              {
+                "id": "time_tracking",
+                "value": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "866877474",
+        "name": "Brodcast",
         "items": [
           {
             "id": "1129325507",

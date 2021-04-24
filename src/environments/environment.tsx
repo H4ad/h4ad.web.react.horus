@@ -6,6 +6,7 @@ export const environment = {
     getBoardsInfoForBoardStatistic: `query {
       boards(ids:[{boardIds}]) {
         id,
+        name,
         items {
           id,
           name,

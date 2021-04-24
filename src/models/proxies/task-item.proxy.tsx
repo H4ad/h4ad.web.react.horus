@@ -4,5 +4,6 @@ export interface TaskItemProxy extends TimeTrackingProxy {
   boardId: number;
   itemId: number;
   userId: number;
+  boardName: string;
   itemName: string;
 }

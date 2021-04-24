@@ -1,10 +1,12 @@
 import Button from 'monday-ui-react-core/dist/Button';
 import { ReactElement, useMemo } from 'react';
-import useMondayStore from '../../../store/useMonday';
+import { CalendarDataContributionItem } from '../../../components/UserCalendar/services/contributions';
+import { UserProxy } from '../../../models/proxies/user.proxy';
+import useMondayStore, { UseMondayStore } from '../../../store/useMonday';
 import { getColumnsStoreInList } from '../../../store/useMonday/functions';
 import useUserStore from '../../../store/useUser';
 import { exportDataByType } from '../../../utils/export';
-import { getFormattedHours } from '../../../utils/hours';
+import { getFormattedHoursExtended, getFormattedRange } from '../../../utils/hours';
 import { getTimeTrackingLogsFromItem } from '../../../utils/monday';
 import { getDefaultUserIfNotLoading } from './functions';
 
@@ -37,9 +39,82 @@ function CalendarBlock({ isLoading, userId, usersMap, calendarData, onChangeSele
   );
 }
 
-function BoardStatisticReports(): ReactElement {
+type SelectedDayGroupItemProps = {
+  user: UserProxy,
+  dayInfo: CalendarDataContributionItem,
+  settings: UseMondayStore['settings'],
+  day: string,
+};
+
+function SelectedDayGroupItem({ user, dayInfo, settings, day }: SelectedDayGroupItemProps): ReactElement {
   const openItemCard = useMondayStore(state => state.openItemCard);
 
+  const groupedData = useMemo(() => {
+    const groups: { boardName: string, items: CalendarDataContributionItem['items'] }[] = []
+    let lastGroupName = '';
+
+    const sortedItems = dayInfo.items.sort((a, b) => {
+      return +new Date(a.task.startedAt) - +new Date(b.task.startedAt)
+    });
+
+    for (const item of sortedItems) {
+      if (item.task.boardName === lastGroupName) {
+        groups[groups.length - 1].items.push(item);
+
+        continue;
+      }
+
+      lastGroupName = item.task.boardName;
+
+      groups.push({
+        boardName: item.task.boardName,
+        items: [item],
+      })
+    }
+
+    return groups;
+  }, [dayInfo])
+
+  return (
+    <>
+      {groupedData.map(itemGroup => {
+        return (<>
+          <S.HeaderText type="h4" value={itemGroup.boardName}/>
+
+          {itemGroup.items.map(item => {
+            const timeTrackingColumn = settings.timeTrackingColumnId[item.boardId] || settings.timeTrackingColumnId.default;
+
+            const time = getTimeTrackingLogsFromItem(item, timeTrackingColumn)
+              .reduce((acc, log) => {
+                if (log.startedAt.startsWith(day))
+                  return acc + log.time;
+
+                return acc;
+              }, 0);
+
+            return (
+              <S.ItemButtonTooltip key={`itemGroup_${item.id}`} content={item.name}>
+                <S.ItemButton kind={Button.kinds.TERTIARY}
+                              onClick={() => openItemCard(+item.id)}>
+                  <S.UserPhoto src={user.photo_thumb_small} alt={user.name}/>
+                  <S.ItemButtonText>
+                    {getFormattedRange(item.task.startedAt, item.task.endedAt)}
+                    <br/>
+                    {getFormattedHoursExtended(time)}
+                    <br/>
+                    {item.name}
+                  </S.ItemButtonText>
+                </S.ItemButton>
+              </S.ItemButtonTooltip>
+            );
+          })}
+        </>)
+      })}
+    </>
+  );
+}
+
+function BoardStatisticReports(): ReactElement {
   const alreadySelectedBoard = useMondayStore(state => state.boardIds.length > 0);
   const timeTrackingColumnList = useMondayStore(state => getColumnsStoreInList(state.settings.timeTrackingColumnId));
   const personColumnList = useMondayStore(state => getColumnsStoreInList(state.settings.personColumnId));
@@ -90,29 +165,11 @@ function BoardStatisticReports(): ReactElement {
               {userIds.map(userId => {
                 const dayInfo = selectedDays[day][userId];
 
-                return dayInfo.items.map(item => {
-                  const user = usersMap[userId];
-
-                  const timeTrackingColumn = settings.timeTrackingColumnId[item.boardId] || settings.timeTrackingColumnId.default;
-
-                  const time = getTimeTrackingLogsFromItem(item, timeTrackingColumn)
-                    .reduce((acc, log) => {
-                      if (log.startedAt.startsWith(day))
-                        return acc + log.time;
-
-                      return acc;
-                    }, 0);
-
-                  return (
-                    <S.ItemButtonTooltip key={`itemGroup_${item.id}`} content={item.name}>
-                      <S.ItemButton kind={Button.kinds.TERTIARY}
-                                    onClick={() => openItemCard(+item.id)}>
-                        <S.UserPhoto src={user.photo_thumb_small} alt={user.name}/>
-                        <S.ItemButtonText>({getFormattedHours(time)}) - {item.name}</S.ItemButtonText>
-                      </S.ItemButton>
-                    </S.ItemButtonTooltip>
-                  );
-                });
+                return <SelectedDayGroupItem key={`itemGroup_${day}_${userId}_list`}
+                                             user={usersMap[userId]}
+                                             day={day}
+                                             settings={settings}
+                                             dayInfo={dayInfo}/>
               })}
             </S.ItemGroup>
           )

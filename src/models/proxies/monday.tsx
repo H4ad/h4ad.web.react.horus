@@ -5,6 +5,7 @@ export interface MondayQueryAPI<T> {
 
 export interface MondayBoard {
   id: string;
+  name: string;
   items: MondayItem[];
 }
 

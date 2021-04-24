@@ -48,9 +48,7 @@ export const ItemButtonTooltip = styled(Tooltip)``;
 export const ItemButton = styled(Button)`
   max-width: 100%;
   min-width: 100%;
-  display: flex;
-  justify-content: flex-start;
-
+  
   margin-bottom: 1rem;
 `;
 
@@ -58,8 +56,10 @@ export const ItemButtonText = styled.p`
   display: block;
 
   height: 100%;
-
   max-width: calc(100% - 2rem);
+  
+  text-align: center;
+  
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

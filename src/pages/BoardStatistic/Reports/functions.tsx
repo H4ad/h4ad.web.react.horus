@@ -30,6 +30,7 @@ export function getCalendarDataFromMondayQuery(query: MondayQueryAPI<BoardStatis
         for (const log of timeTrackingLogs) {
           const task: TaskItemProxy = {
             boardId: +board.id,
+            boardName: board.name,
             itemId: +item.id,
             itemName: item.name,
             userId,
@@ -61,7 +62,12 @@ export function getCalendarDataFromMondayQuery(query: MondayQueryAPI<BoardStatis
           };
 
           dedupedContributions[task.userId][date].count += task.time;
-          dedupedContributions[task.userId][date].items = [...dedupedContributions[task.userId][date].items, { ...item, boardId: board.id }];
+
+          dedupedContributions[task.userId][date].items = [...dedupedContributions[task.userId][date].items, {
+            ...item,
+            boardId: board.id,
+            task,
+          }];
 
           tasks[task.userId] = [...(tasks[task.userId] || []), task];
         }
