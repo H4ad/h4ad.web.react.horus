@@ -12,18 +12,12 @@ export async function getBoardsInfoForBoardStatistic(monday: MondayClientSdk, bo
   const timeTrackingColumns = getColumnsStoreInList(settings.timeTrackingColumnId);
   const personColumns = getColumnsStoreInList(settings.personColumnId);
 
-  if (timeTrackingColumns.length === 0)
-    return { data: { boards: [] }, account_id: 0 };
-
-  if (personColumns.length === 0)
-    return { data: { boards: [] }, account_id: 0 };
-
   if (!monday)
     return { data: { boards: [] }, account_id: 0 };
 
   const query = environment.graphql.getBoardsInfoForBoardStatistic
     .replace('{boardIds}', boardIds.join(','))
-    .replace('{columnValueIds}', JSON.stringify([...timeTrackingColumns, ...personColumns].flat(2)));
+    .replace('{columnValueIds}', JSON.stringify([...timeTrackingColumns, ...personColumns, 'time_tracking', 'people', 'person', 'recurso', 'controle_de_tempo'].flat(2)));
 
   return monday.api(query);
 }

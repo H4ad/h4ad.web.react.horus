@@ -21,8 +21,8 @@ export function getCalendarDataFromMondayQuery(query: MondayQueryAPI<BoardStatis
 
   for (const board of boards) {
     for (const item of board.items) {
-      const userIds = getUserIdsFromItem(item, settings.personColumnId[board.id] || settings.personColumnId.default);
-      const timeTrackingLogs = getTimeTrackingLogsFromItem(item, settings.timeTrackingColumnId[board.id] || settings.timeTrackingColumnId.default);
+      const userIds = getUserIdsFromItem(item, settings.personColumnId[board.id] || [...(settings.personColumnId.default || []), 'people', 'recurso', 'person']);
+      const timeTrackingLogs = getTimeTrackingLogsFromItem(item, settings.timeTrackingColumnId[board.id] || [...(settings.timeTrackingColumnId.default || []), 'time_tracking', 'controle_de_tempo']);
 
       for (const userId of userIds) {
         userIdsToMap[userId] = true;

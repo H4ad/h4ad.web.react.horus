@@ -67,7 +67,7 @@ export function createUseMondayStore(): UseStore<UseMondayStore> {
 
           const boardIds = res.data.boardIds || [res.data.boardId];
 
-          set({ boardIds });
+          set({ boardIds, selectedDays: {} });
 
           get().fetchBoardItems();
         });

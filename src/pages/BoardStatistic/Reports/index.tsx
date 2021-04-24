@@ -5,7 +5,6 @@ import { CalendarDataContributionItem, CalendarDataContributionItems } from '../
 import { DEFAULT_THEME } from '../../../components/UserCalendar/utils/constants';
 import { UserProxy } from '../../../models/proxies/user.proxy';
 import useMondayStore from '../../../store/useMonday';
-import { getColumnsStoreInList } from '../../../store/useMonday/functions';
 import useUserStore from '../../../store/useUser';
 import { exportDataByType } from '../../../utils/export';
 import { getFormattedHoursExtended, getFormattedRange } from '../../../utils/hours';
@@ -116,8 +115,6 @@ function SelectedDayGroupItem({ userIds, usersMap, selectedDay }: SelectedDayGro
 
 function BoardStatisticReports(): ReactElement {
   const alreadySelectedBoard = useMondayStore(state => state.boardIds.length > 0);
-  const timeTrackingColumnList = useMondayStore(state => getColumnsStoreInList(state.settings.timeTrackingColumnId));
-  const personColumnList = useMondayStore(state => getColumnsStoreInList(state.settings.personColumnId));
 
   const isLoadingData = useMondayStore(state => state.isLoadingData);
   const calendars = useMondayStore(state => state.calendars);
@@ -131,14 +128,6 @@ function BoardStatisticReports(): ReactElement {
 
   if (!alreadySelectedBoard)
     return <S.HeaderText type="h2" value="Sorry, you need to select the board first."/>
-
-  if (timeTrackingColumnList.length === 0)
-    return <S.HeaderText type="h2"
-                         value="Sorry, the columns of Time Tracking is missing, please, select these columns first."/>
-
-  if (personColumnList.length === 0)
-    return <S.HeaderText type="h2"
-                         value="Sorry, the columns of Person is missing, please, select these columns first."/>
 
   return (<>
     {(isLoadingData) && (
