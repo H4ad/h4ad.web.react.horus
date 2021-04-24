@@ -14,6 +14,36 @@ export const Loading = styled(HLoading)`
   margin: 0 auto;
 `;
 
+export const Legends = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin-bottom: 1rem;
+
+  max-width: 1280px;
+`
+
+export const LegendItem = styled.div`
+  display: flex;
+
+  align-items: center;
+  
+  margin-right: 1.5rem;
+  margin-bottom: .5rem;
+  
+  font-size: .8rem;
+`
+
+export const LegendItemColor = styled.span`
+  height: 1rem;
+  width: 1rem;
+
+  margin-right: .5rem;
+
+  background-color: ${props => props.color};
+`
+
 export const Section = styled.section`
   display: flex;
   flex-wrap: wrap;
@@ -24,20 +54,20 @@ export const Section = styled.section`
 export const Calendars = styled.div`
   width: 100%;
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     padding-right: 1rem;
 
     width: 60%;
-  } 
+  }
 `;
 
 export const Items = styled.div`
   width: 100%;
-  
+
   padding-left: .5rem;
   padding-right: .5rem;
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     padding-left: 1rem;
     padding-right: 0;
 
@@ -61,7 +91,7 @@ export const ItemButtonTooltip = styled(Tooltip)``;
 export const ItemButton = styled(Button)`
   max-width: 100%;
   min-width: 100%;
-  
+
   margin-bottom: 1rem;
 `;
 
@@ -70,9 +100,9 @@ export const ItemButtonText = styled.p`
 
   height: 100%;
   max-width: calc(100% - 2rem);
-  
+
   text-align: center;
-  
+
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

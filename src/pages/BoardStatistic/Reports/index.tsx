@@ -2,6 +2,7 @@ import { Empty } from 'antd';
 import Button from 'monday-ui-react-core/dist/Button';
 import { ReactElement, useMemo } from 'react';
 import { CalendarDataContributionItem } from '../../../components/UserCalendar/services/contributions';
+import { DEFAULT_THEME } from '../../../components/UserCalendar/utils/constants';
 import { UserProxy } from '../../../models/proxies/user.proxy';
 import useMondayStore, { UseMondayStore } from '../../../store/useMonday';
 import { getColumnsStoreInList } from '../../../store/useMonday/functions';
@@ -147,6 +148,48 @@ function BoardStatisticReports(): ReactElement {
     {(isLoadingData) && (
       <S.Loading/>
     )}
+
+    <S.Legends>
+      <S.LegendItem>
+        <S.LegendItemColor color={DEFAULT_THEME.grade0}/>
+
+        <S.ItemButtonTooltip content="No time registered">
+          <span>No time registered</span>
+        </S.ItemButtonTooltip>
+      </S.LegendItem>
+
+      <S.LegendItem>
+        <S.LegendItemColor color={DEFAULT_THEME.grade1}/>
+
+        <S.ItemButtonTooltip content="Less than specified working time">
+          <span>Time is {'<'} Work Time</span>
+        </S.ItemButtonTooltip>
+      </S.LegendItem>
+
+      <S.LegendItem>
+        <S.LegendItemColor color={DEFAULT_THEME.grade2}/>
+
+        <S.ItemButtonTooltip content="Working time greater than specified, but not more than 1 hour.">
+          <span>Time is {'>'} Work Time and {'<'} +1</span>
+        </S.ItemButtonTooltip>
+      </S.LegendItem>
+
+      <S.LegendItem>
+        <S.LegendItemColor color={DEFAULT_THEME.grade3}/>
+
+        <S.ItemButtonTooltip content="Exceeded in 1 hour of the specified work time">
+          <span>Time is {'>'} Work Time +1</span>
+        </S.ItemButtonTooltip>
+      </S.LegendItem>
+
+      <S.LegendItem>
+        <S.LegendItemColor color={DEFAULT_THEME.grade4}/>
+
+        <S.ItemButtonTooltip content="Exceeded in 2 hour of the specified work time">
+          <span>Time is {'>'} Work Time +2</span>
+        </S.ItemButtonTooltip>
+      </S.LegendItem>
+    </S.Legends>
 
     <S.Section>
       <S.Calendars>
