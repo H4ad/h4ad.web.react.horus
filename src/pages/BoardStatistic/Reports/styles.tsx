@@ -18,7 +18,9 @@ export const Legends = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
+  
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: 1rem;
 
   max-width: 1280px;
@@ -29,7 +31,8 @@ export const LegendItem = styled.div`
 
   align-items: center;
   
-  margin-right: 1.5rem;
+  margin-right: .75rem;
+  margin-left: .75rem;
   margin-bottom: .5rem;
   
   font-size: .8rem;
