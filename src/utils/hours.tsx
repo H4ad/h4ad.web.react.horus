@@ -13,5 +13,5 @@ export function getFormattedHours(totalCount: number): string {
 }
 
 export function getFormattedRange(startedAt: string, endedAt: string): string {
-  return `From ${startedAt.split('T')[1].replace('Z', '')} to ${endedAt.split('T')[1].replace('Z', '')}`
+  return `From ${new Date(startedAt).toLocaleTimeString()} to ${new Date(endedAt).toLocaleTimeString()}`
 }
