@@ -6,7 +6,11 @@ You can click in each day to visualize what tasks that hours was related to and 
 
 Also, you can export hours from each user in one or more boards that you have selected, and if you need the exported hours from entire board, go to the "Exports" tab and export the tasks for each user of selected boards in CSV, Excel or JSON.
 
-# Install
+## See the App
+
+![image](https://user-images.githubusercontent.com/12551007/116639289-90f56580-a93e-11eb-9233-27fe70e2a887.png)
+
+## Install
 
 Click the button below to install the app in our monday account.
 
