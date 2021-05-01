@@ -1,10 +1,10 @@
 # Horus
 
-With Horus you can see hours launched by a person in each day of the year in an beuatiful calendar, each day is colorful to help you visualize if user get the goal or he missing some hours in that specific day. 
+With Horus you can see the hours launched by a person on each day of the year in a beautiful calendar, each day is colored to help you see if the user has reached the goal or if he has missed a few hours on that specific day.
 
-You can click in each day to visualize what tasks that hours was related to and see how longer was those tasks. If you need to fix some issue in that day, by clicking in the task, a modal from monday is presented to you for you edit that specific task.
+You can click on each day to see what tasks those hours were related to and see how long those tasks lasted. If you need to fix a problem that day, by clicking on the task, a modal starting on Monday is presented to you to edit that specific task.
 
-Also, you can export hours from each user in one or more boards that you have selected, and if you need the exported hours from entire board, go to the "Exports" tab and export the tasks for each user of selected boards in CSV, Excel or JSON.
+In addition, you can export hours for each user on one or more panels that you have selected, and if you need the hours exported for the entire panel, go to the "Exports" tab and export the tasks for each user of the panels selected in CSV, Excel or JSON.
 
 ## See the App
 
